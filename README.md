@@ -17,7 +17,8 @@ lo primero que hay que hacer es el comando a nivel /apst-web
 npm install
 ```
 
-Para coorrer los servers:
-
+Para correr los servers:
+```
 meteor run --settings private/settings.json
 npm start
+```

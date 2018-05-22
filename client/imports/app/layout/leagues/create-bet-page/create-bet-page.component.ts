@@ -39,7 +39,7 @@ export class CreateBetPageComponent implements OnInit {
   getApiMatch() {
     MeteorObservable.autorun().subscribe(() => {
       MeteorObservable.call('getApiMatch', this.matchId).subscribe({
-        next: (apiMatch) => {
+        next: (apiMatch:ApiMatch) => {
           this.apiMatch = apiMatch;
         },
         error: (e: Error) => {
