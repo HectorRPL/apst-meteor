@@ -1,0 +1,32 @@
+<small>
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Match</th>
+        <th scope="col">Created</th>
+        <th scope="col">Friend</th>
+        <th class="text-right" scope="col">Amount</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let betO2O of betsO2O$ | async" (click)="openDetailModal(betO2O._id)">
+        <td>4565432</td>
+        <td>
+          <span [ngClass]="{'font-weight-bold': betO2O.forecastCreator === 'home'}">
+            {{betO2O.home}}
+          </span>
+          /
+          <span [ngClass]="{'font-weight-bold': betO2O.forecastCreator === 'away'}">
+            {{betO2O.away}}
+          </span>
+        </td>
+        <td>{{betO2O.creationDate | date: 'dd/MM/yyyy, h:mm'}}</td>
+        <td>Chivín</td>
+        <td class="text-right">{{betO2O.amount | currency}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</small>

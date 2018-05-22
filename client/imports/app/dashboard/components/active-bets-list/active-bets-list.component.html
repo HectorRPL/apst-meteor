@@ -1,0 +1,40 @@
+<small>
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Match</th>
+        <th scope="col">Creator</th>
+        <th scope="col">Taken</th>
+        <th scope="col">Accepted</th>
+        <th class="text-right" scope="col">Amount</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let betO2O of betsO2O$ | async" (click)="openDetailModal(betO2O._id)">
+        <!--Id-->
+        <td>{{betO2O._id}}</td>
+        <!--Match-->
+        <td>
+          <span [ngClass]="{'font-weight-bold': betO2O.forecastCreator === 'home'}">
+            {{betO2O.home}}
+          </span>
+          /
+          <span [ngClass]="{'font-weight-bold': betO2O.forecastCreator === 'away'}">
+            {{betO2O.away}}
+          </span>
+        </td>
+        <!--Creator-->
+        <td>{{betO2O.creatorUserId}}</td>
+        <!--Friend-->
+        <td>{{betO2O.oponentUserId}}</td>
+        <!--Accepted-->
+        <td>{{betO2O.acceptDate | date: 'dd/MM/yyyy, h:mm'}}</td>
+        <!--Amount-->
+        <td class="text-right">{{betO2O.amount | currency}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</small>

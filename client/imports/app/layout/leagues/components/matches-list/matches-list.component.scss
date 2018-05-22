@@ -1,0 +1,11 @@
+// Ajusta los textos muy largos para no estropear los estilos
+.adjust {
+  white-space:nowrap;
+  text-overflow:ellipsis;
+  overflow:hidden;
+}
+
+.offline {
+  pointer-events: none;
+  cursor: default;
+}

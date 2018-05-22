@@ -1,0 +1,23 @@
+<ul class="pull-right">
+  <li>
+    <div class="nav-item" ngbDropdown>
+      <a ngbDropdownToggle>
+        <i class="fa fa-fw fa-user"></i>
+        <strong class="hide-in-responsive">
+          {{user.username | uppercase}}
+        </strong>
+      </a>
+      <div class="dropdown-menu force-dropdown-menu-right" ngbDropdownMenu>
+        <a class="dropdown-item" (click)="openMyAccountModal()">Account</a>
+        <a class="dropdown-item" routerLink="/dashboard">Dashboard</a>
+        <div class="dropdown-divider"></div>
+        <logout class="dropdown-item"></logout>
+      </div>
+    </div>
+  </li>
+  <li class="nav-item">
+    <a (click)="openATMModal()">
+      &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-credit-card"></i>
+    </a>
+  </li>
+</ul>

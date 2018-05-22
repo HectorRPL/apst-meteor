@@ -1,0 +1,15 @@
+<div class="navbar row fixed-top fondo-color-primario">
+  <div class="col-6">
+    <a class="navbar-brand" routerLink="/leagues/top-list"> GreedSports </a>
+  </div>
+  <div class="col-6" *ngIf="fullyCharged">
+    <user-menu-logged-in
+      *ngIf="user$"
+      [user]="user$">
+    </user-menu-logged-in>
+    <login-register-buttons
+      class="pull-right"
+      *ngIf="!user$">
+    </login-register-buttons>
+  </div>
+</div>

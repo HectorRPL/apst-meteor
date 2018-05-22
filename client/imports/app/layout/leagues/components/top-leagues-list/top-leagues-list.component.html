@@ -1,0 +1,10 @@
+<div class="row">
+  <div class="col-sm-4 p-1" *ngFor="let league of leagues | async">
+    <a class="card" routerLink="/app/leagues/{{league.apiLeagueId}}/matches">
+      <div class="card-body text-center adjust">
+        {{league.name}} <br>
+        <small>{{league.apiLeagueId}}</small>
+      </div>
+    </a>
+  </div>
+</div>

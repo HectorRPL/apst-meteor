@@ -17,3 +17,7 @@ angular-compilers
 check
 reywood:publish-composite
 accounts-password
+accounts-facebook
+accounts-google
+percolate:synced-cron
+service-configuration

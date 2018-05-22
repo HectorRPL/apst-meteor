@@ -1,0 +1,22 @@
+
+<div class="row">
+  <div class="col-md-6 offset-md-3">
+    <div class="card">
+      <div class="card-body text-center" *ngIf="betO2O">
+        <small>Creado por: {{betO2O.creatorUserId}}</small>
+        <h4>{{betO2O.home}}&nbsp;Vs&nbsp;{{betO2O.away}}</h4>
+        <small>{{betO2O.matchStartDate}}</small>
+        <h6>Cantidad: ${{betO2O.amount}}</h6>
+        <div *ngIf="userId && betO2O.oponentUserId">
+          <h3>Solo cuando ya se ha aceptado</h3>
+        </div>
+        <div  *ngIf="betO2O.creatorUserId === userId && !betO2O.oponentUserId">
+          <app-share-bet></app-share-bet>
+        </div>
+        <div *ngIf="userId && betO2O.creatorUserId != userId && !betO2O.oponentUserId">
+          <app-accept-bet [userId]="userId" [betId]="betId"></app-accept-bet>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

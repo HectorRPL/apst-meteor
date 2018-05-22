@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-sm-12">
+    <small>
+      <a routerLinkActive="a-tag-active" routerLink="/dashboard/active">Active</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a routerLinkActive="a-tag-active" routerLink="/dashboard/pending">Pending</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a routerLinkActive="a-tag-active" routerLink="/dashboard/won">Won</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a routerLinkActive="a-tag-active" routerLink="/dashboard/losses">Losses</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a routerLinkActive="a-tag-active" routerLink="/dashboard/draw">Draw</a>
+    </small>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-sm-9">
+    <router-outlet></router-outlet>
+  </div>
+  <div class="col-sm-3">
+    <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+      <ngb-panel title="Resume">
+        <ng-template ngbPanelContent>
+          <app-resume></app-resume>
+        </ng-template>
+      </ngb-panel>
+    </ngb-accordion>
+  </div>
+</div>
+

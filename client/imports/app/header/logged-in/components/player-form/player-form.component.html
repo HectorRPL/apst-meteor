@@ -1,0 +1,85 @@
+<form [formGroup]="playerFrm"
+      (ngSubmit)="onSubmit()"
+      novalidate
+      autocomplete="off">
+  <div class="form-row">
+    <!--NOMBRE-->
+    <div class="col-sm-6 mb-3">
+      <input id="nameId"
+             type="text"
+             name="name"
+             class="form-control"
+             placeholder="Name"
+             [ngClass]="{'is-invalid': playerFrm.get('name').invalid && !playerFrm.get('name').pristine}"
+             formControlName="name">
+      <div class="invalid-feedback" *ngIf="playerFrm.get('name').errors?.required">required</div>
+      <div class="invalid-feedback" *ngIf="playerFrm.get('name').errors?.pattern">Just letters</div>
+      <div class="invalid-feedback" *ngIf="playerFrm.get('name').errors?.maxlength">30 characters maximum</div>
+    </div>
+    <!--APELLIDOS-->
+    <div class="col-sm-6 mb-3">
+      <input id="lastNameId"
+             type="text"
+             name="lastName"
+             class="form-control"
+             placeholder="Last name"
+             [ngClass]="{'is-invalid': playerFrm.get('lastName').invalid && !playerFrm.get('lastName').pristine}"
+             formControlName="lastName">
+      <div class="invalid-feedback" *ngIf="playerFrm.get('lastName').errors?.required">required</div>
+      <div class="invalid-feedback" *ngIf="playerFrm.get('lastName').errors?.pattern">just letters</div>
+      <div class="invalid-feedback" *ngIf="playerFrm.get('lastName').errors?.maxlength">30 characters maximum</div>
+    </div>
+    <!--FECHA DE NACIMIENTO-->
+    <div class="col-sm-6 mb-3">
+      <div class="input-group">
+        <input id="birdDateId"
+               class="form-control"
+               type="text"
+               name="birdDate"
+               placeholder="BirdDate (yyyy-mm-dd)"
+               [ngClass]="{'is-invalid': playerFrm.get('birdDate').invalid && !playerFrm.get('birdDate').pristine}"
+               formControlName="birdDate"
+               ngbDatepicker
+               [minDate]="minDate"
+               [maxDate]="maxDate"
+               maxDate="2010-01-01"
+               #d="ngbDatepicker">
+        <div class="input-group-append">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary"
+                    type="button"
+                    (click)="d.toggle()">
+              <img src="assets/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;">
+            </button>
+          </div>
+        </div>
+        <div class="invalid-feedback" *ngIf="playerFrm.get('birdDate').errors?.required">required</div>
+      </div>
+    </div>
+    <!--MENSAJES-->
+    <div class="col-sm-12 mb-3">
+      <app-messages></app-messages>
+    </div>
+    <!--BUTTON-->
+    <div class="col-sm-12 mb-3">
+      <button type="submit"
+              class="btn btn-primary form-control"
+              [disabled]="playerFrm.invalid">Save
+      </button>
+    </div>
+  </div>
+</form>
+
+<!--
+<br>[playerFrm.value]<br>
+<pre>{{playerFrm.value | json}}</pre>
+
+<br>[playerFrm]<br>
+<pre>{{playerFrm.status | json}}</pre>
+
+<br>[ventaPartidaOrden]:<br>
+<pre>{{ventaPartidaOrden | json}}</pre>
+
+<br>[ventaEntrega]:<br>
+<pre>{{ventaEntrega | json}}</pre>
+-->

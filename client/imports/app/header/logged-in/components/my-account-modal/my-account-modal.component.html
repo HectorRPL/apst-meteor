@@ -1,0 +1,43 @@
+<div class="modal-header">
+  <h4 class="modal-title">My account</h4>
+  <button type="button"
+          class="close"
+          aria-label="Close"
+          (click)="closeModal()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="row">
+    <div class="col-sm-12">
+      <ngb-accordion #acc="ngbAccordion" [closeOthers]="true" activeIds="ngb-panel-0">
+        <ngb-panel title="Player">
+          <ng-template ngbPanelContent>
+            <app-player-form
+              [player]="player$">
+            </app-player-form>
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel title="Username">
+          <ng-template ngbPanelContent>
+            <app-username-form
+              [user]="user$">
+            </app-username-form>
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel title="Password">
+          <ng-template ngbPanelContent>
+            <app-password-form></app-password-form>
+          </ng-template>
+        </ngb-panel>
+      </ngb-accordion>
+
+    </div>
+  </div>
+</div>
+<div class="modal-footer">
+  <button type="button"
+          class="btn btn-outline-dark"
+          (click)="closeModal()">Close
+  </button>
+</div>

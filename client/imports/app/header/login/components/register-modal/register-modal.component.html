@@ -1,0 +1,35 @@
+<div class="modal-header">
+  <h4 class="modal-title">Create account</h4>
+  <button type="button"
+          class="close"
+          aria-label="Close"
+          (click)="closeModal()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="row">
+    <div class="col-sm-12 mb-3">
+      <button class="btn btn-primary form-control"
+              [disabled]="true">facebook
+      </button>
+    </div>
+    <div class="col-sm-12 mb-3">
+      <button class="btn btn-primary form-control"
+              [disabled]="true">google
+      </button>
+    </div>
+    <div class="col-sm-12">
+      <hr>
+    </div>
+    <div class="col-sm-12">
+      <app-register-form></app-register-form>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button"
+            class="btn btn-outline-dark"
+            (click)="closeModal()">Close
+    </button>
+  </div>
+</div>

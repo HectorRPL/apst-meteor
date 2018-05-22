@@ -1,0 +1,6 @@
+<p *ngFor="let message of messageServ.messages">
+  <ngb-alert [dismissible]="false" [type]="message.type">
+    <strong> {{message.message}}</strong>
+  </ngb-alert>
+</p>
+

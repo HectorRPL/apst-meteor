@@ -1,54 +1,35 @@
-import { NgModule } from '@angular/core';
-
-import { BrowserModule } from '@angular/platform-browser';
-
-import { RouterModule } from '@angular/router';
-
-import { AppComponent } from './app.component';
-import { TodoListComponent } from './todo-list/todo-list.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {AppComponent} from './app.component';
+import {AppRoutingModule} from './app-routing.module';
+import {HttpErrorHandlerService} from './services/http-error-handler.service';
+import {MessagesService} from './services/messages.service';
+import {LeaguesService} from './services/leagues.service'
+import {ShareModule} from './share/share.module';
+import {HeaderModule} from './header/header.module';
+import {FooterModule} from './footer/footer.module';
 
 @NgModule({
   imports: [
     BrowserModule,
-    RouterModule.forRoot([
-      {
-        path: 'todoList',
-        component: TodoListComponent,
-        data: {
-          title: 'Todo List'
-        }
-      },
-      {
-        path: 'todoAdd',
-        loadChildren: './todo-add/todo-add.module#TodoAddModule',
-        data: {
-          title: 'Add Todo'
-        }
-      },
-      // Home Page
-      {
-        path: '',
-        redirectTo: '/todoList',
-        pathMatch: 'full'
-      },
-      // 404 Page
-      {
-        path: '**',
-        component: PageNotFoundComponent,
-        data: {
-          title: '404 Page Not Found'
-        }
-      }
-    ])
+    CommonModule,
+    AppRoutingModule,
+    ShareModule,
+    HeaderModule,
+    FooterModule,
+    NgbModule.forRoot()
   ],
   declarations: [
-    AppComponent,
-    TodoListComponent,
-    PageNotFoundComponent
-  ],
-  bootstrap: [
     AppComponent
-  ]
+  ],
+  providers: [
+    HttpErrorHandlerService,
+    MessagesService,
+    LeaguesService
+  ],
+  bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

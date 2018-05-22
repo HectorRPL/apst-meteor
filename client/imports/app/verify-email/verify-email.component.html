@@ -1,0 +1,23 @@
+<section class="main-container">
+  <div class="row">
+    <div class="col-sm-12 p-3">
+      <h3 class="text-center">
+        Email verification
+      </h3>
+    </div>
+    <div class="col-sm-12 p-3">
+      <p *ngFor="let alert of alerts">
+        <ngb-alert [type]="alert.type"
+                   [dismissible]="false">
+          {{alert.message}}
+        </ngb-alert>
+      </p>
+    </div>
+    <div class="col-sm-12 p-3" *ngIf="expiredLink">
+      <button type="button"
+              class="btn btn-primary form-control"
+              (click)="sendEmailVerification()">Send again
+      </button>
+    </div>
+  </div>
+</section>

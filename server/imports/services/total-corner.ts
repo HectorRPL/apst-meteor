@@ -16,7 +16,7 @@ export class TotCornerService {
             params: {token: this.token, page: fPage}
         };
         try {
-            const response = HTTP.get(`${this.baseUrl}${uriMatches}`);
+            const response = HTTP.get(`${this.baseUrl}${uriMatches}`, options);
             return response.data.data.matches;
         } catch (e) {
             console.log(e);

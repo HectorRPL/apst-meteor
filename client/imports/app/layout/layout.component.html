@@ -1,0 +1,32 @@
+<section>
+  <ul class="nav nav-tabs justify-content-center fijado-abajo-del-nabvar fondo-color-primario">
+    <li class="nav-item">
+      <a class="nav-link"
+         routerLink="/app/bet"
+         routerLinkActive="active">Open
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link"
+         routerLink="/app/leagues"
+         routerLinkActive="active">Create
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link"
+         routerLink="/app/dashboard"
+         routerLinkActive="active">Dashboard
+      </a>
+    </li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane fade show active p-2">
+      <div class="row">
+        <div class="col-sm-12 p-1">
+          <app-mail-alert-not-verified></app-mail-alert-not-verified>
+        </div>
+      </div>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</section>

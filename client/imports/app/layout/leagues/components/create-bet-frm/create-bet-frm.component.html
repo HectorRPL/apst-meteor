@@ -1,0 +1,51 @@
+<form [formGroup]="createBetFrm" (ngSubmit)="create()" novalidate autocomplete="off">
+  <div class="form-row mb-3">
+    <div class="col-sm-12 mb-3">
+      Choose your team
+      <div class="btn-group btn-group-toggle d-flex"
+           ngbRadioGroup name="radioBasic"
+           formControlName="forecastCreator">
+        <label ngbButtonLabel class="btn-primary w-100">
+          <input ngbButton name="forecastCreator"
+                 formControlName="forecastCreator"
+                 type="radio" [value]="'home'">
+          {{apiMatch.h}}
+        </label>
+        <label ngbButtonLabel class="btn-primary w-100">
+          <input ngbButton name="forecastCreator"
+                 formControlName="forecastCreator"
+                 type="radio" [value]="'away'">
+          {{apiMatch.a}}
+        </label>
+      </div>
+    </div>
+    <div class="col-sm-12 mb-3">
+      {{createBetFrm.value['forecastCreator']}}
+    </div>
+    <!--CANTIDAD A APOSTAR-->
+    <div class="col-sm-12 mb-3">
+      <label for="amountId">Enter the amount</label>
+      <input id="amountId" type="number" name="amount" formControlName="amount"
+             placeholder="$" class="form-control"
+             [ngClass]="{'is-invalid': createBetFrm.get('amount').invalid
+             && !createBetFrm.get('amount').pristine}">
+      <div class="invalid-feedback" *ngIf="createBetFrm.get('amount').errors?.required">Required</div>
+      <div class="invalid-feedback" *ngIf="createBetFrm.get('amount').errors?.amountInvalid">Chip limit exceeded
+        Buy more.
+      </div>
+      <div class="invalid-feedback" *ngIf="createBetFrm.get('amount').errors?.min">The minimun match is $100 coins</div>
+    </div>
+    <!--BUTTON-->
+    <div class="col-sm-12 mb-3">
+      <label>&nbsp;</label>
+      <button type="submit" class="btn btn-primary form-control"
+              [ngClass]="{'disabled': createBetFrm.invalid}"
+              [disabled]="createBetFrm.invalid || !userId">
+        Create
+      </button>
+    </div>
+    <div class="col-sm-12 mb-3">
+      <app-messages></app-messages>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,36 @@
+<small>
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th scope="col">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Id</th>
+        <th scope="col">Match</th>
+        <th scope="col">Created</th>
+        <th class="text-right" scope="col">Amount</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let betO2O of betsO2O$ | async">
+        <td>
+          <a class="dont-toch-me" (click)="deleteBet020(betO2O._id)">
+            <i class="fa fa-trash"></i>
+          </a>&nbsp;&nbsp;&nbsp;
+          <span (click)="openDetailModal(betO2O._id)">4565432</span>
+        </td>
+        <td (click)="openDetailModal(betO2O._id)">
+          <span [ngClass]="{'font-weight-bold': betO2O.forecastCreator === 'home'}">
+            {{betO2O.home}}
+          </span>
+          /
+          <span [ngClass]="{'font-weight-bold': betO2O.forecastCreator === 'away'}">
+            {{betO2O.away}}
+          </span>
+        </td>
+        <td (click)="openDetailModal(betO2O._id)">{{betO2O.creationDate | date: 'dd/MM/yyyy, h:mm'}}</td>
+        <td class="text-right" (click)="openDetailModal(betO2O._id)">{{betO2O.amount | currency}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <app-messages></app-messages>
+</small>

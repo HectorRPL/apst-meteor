@@ -1,0 +1,15 @@
+.footer {
+  background-color: lightgray;
+  border: 1px solid white;
+  border-top-color: lightgray;
+}
+
+.scrollable {
+  height: 50%;
+  padding: 15px;
+
+  -ms-overflow-x: scroll;
+  overflow-x: scroll;
+  overflow-y: scroll;
+  overflow: scroll;
+}

@@ -19,4 +19,5 @@ npm install
 
 Para coorrer los servers:
 
-meteor run
+meteor run --settings private/settings.json
+npm start

@@ -1,0 +1,7 @@
+import './imports/methods/leagues'
+import './imports/methods/bets-O2O'
+import './imports/methods/players'
+import './imports/methods/matches'
+import './imports/methods/chips'
+import './imports/methods/total-corner'
+import './imports/methods/users'

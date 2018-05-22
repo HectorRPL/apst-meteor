@@ -1,0 +1,54 @@
+<form [formGroup]="loginFrm"
+      (ngSubmit)="onSubmit()"
+      novalidate
+      autocomplete="off">
+  <div class="form-row">
+    <div class="col-sm-12 mb-3">
+      <input id="emailId"
+             type="email"
+             name="email"
+             placeholder="Email"
+             class="form-control"
+             [ngClass]="{'is-invalid': loginFrm.get('email').invalid && !loginFrm.get('email').pristine}"
+             formControlName="email">
+      <div class="invalid-feedback" *ngIf="loginFrm.get('email').errors?.required">required</div>
+      <div class="invalid-feedback" *ngIf="loginFrm.get('email').errors?.email">Invalid</div>
+    </div>
+    <!--PASSWORD-->
+    <div class="col-sm-12 mb-3">
+      <input id="passwordId"
+             type="password"
+             name="password"
+             placeholder="Password"
+             class="form-control"
+             [ngClass]="{'is-invalid': loginFrm.get('password').invalid && !loginFrm.get('password').pristine}"
+             formControlName="password">
+      <div class="invalid-feedback" *ngIf="loginFrm.get('password').errors?.required">required</div>
+    </div>
+    <!--ALERT-->
+    <div class="col-sm-12 mb-3">
+      <app-messages></app-messages>
+    </div>
+    <!--BUTTON-->
+    <div class="col-sm-12 mb-3">
+      <button type="submit"
+              class="btn btn-primary form-control"
+              [disabled]="loginFrm.invalid">Login
+      </button>
+    </div>
+  </div>
+</form>
+
+<!--
+<br>[loginFrm.value]<br>
+<pre>{{loginFrm.value | json}}</pre>
+
+<br>[loginFrm]<br>
+<pre>{{loginFrm.status | json}}</pre>
+
+<br>[ventaPartidaOrden]:<br>
+<pre>{{ventaPartidaOrden | json}}</pre>
+
+<br>[ventaEntrega]:<br>
+<pre>{{ventaEntrega | json}}</pre>
+-->

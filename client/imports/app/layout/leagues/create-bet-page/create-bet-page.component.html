@@ -1,0 +1,8 @@
+<div class="col-sm-12 mb-3" *ngIf="!userId">
+  <ngb-alert [dismissible]="true" [type]="'warning'">
+    <strong>Para crear un apuesta necesitas estar logeado</strong>
+  </ngb-alert>
+</div>
+<app-create-bet-frm [apiMatch]="apiMatch" *ngIf="apiMatch"
+                    [userId]="userId" [match]="match">
+</app-create-bet-frm>

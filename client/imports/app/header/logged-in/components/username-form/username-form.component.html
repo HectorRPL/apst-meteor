@@ -1,0 +1,43 @@
+<form [formGroup]="usernameFrm"
+      (ngSubmit)="onSubmit()"
+      novalidate
+      autocomplete="off">
+  <div class="form-row">
+    <!--USERNAME-->
+    <div class="col-sm-6 mb-3">
+      <input id="usernameId"
+             type="email"
+             name="username"
+             placeholder="Username"
+             class="form-control"
+             [ngClass]="{'is-invalid': usernameFrm.get('username').invalid && !usernameFrm.get('username').pristine}"
+             formControlName="username">
+      <div class="invalid-feedback" *ngIf="usernameFrm.get('username').errors?.required">Required</div>
+      <div class="invalid-feedback" *ngIf="usernameFrm.get('username').errors?.pattern">No space character</div>
+    </div>
+    <div class="col-sm-12 mb-3">
+      <app-messages></app-messages>
+    </div>
+    <!--BUTTON-->
+    <div class="col-sm-12 mb-3">
+      <button type="submit"
+              class="btn btn-primary form-control"
+              [disabled]="usernameFrm.invalid">Save
+      </button>
+    </div>
+  </div>
+</form>
+
+<!--
+<br>[usernameFrm.value]<br>
+<pre>{{usernameFrm.value | json}}</pre>
+
+<br>[usernameFrm]<br>
+<pre>{{usernameFrm.status | json}}</pre>
+
+<br>[ventaPartidaOrden]:<br>
+<pre>{{ventaPartidaOrden | json}}</pre>
+
+<br>[ventaEntrega]:<br>
+<pre>{{ventaEntrega | json}}</pre>
+-->
