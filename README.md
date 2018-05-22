@@ -12,7 +12,7 @@ DataBase
 
 Cuando se hace un git clone
 
-lo primero que hay que hacer es el comando a nivel /apst-web
+lo primero que hay que hacer es el comando a nivel /apst-meteor
 ```
 npm install
 ```
