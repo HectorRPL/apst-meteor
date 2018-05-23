@@ -9,29 +9,37 @@ import {DetailLossesBetModalComponent} from './components/detail-losses-bet-moda
 import {DetailPendingBetModalComponent} from './components/detail-pending-bet-modal/detail-pending-bet-modal.component';
 import {DetailWonBetModalComponent} from './components/detail-won-bet-modal/detail-won-bet-modal.component';
 import {ResumeComponent} from './components/resume/resume.component';
+import {BetsO2OService} from "../services/bets-O2O/bets-o2-o.service";
+import {ActiveBetsPageComponent} from "./active-bets-page/active-bets-page.component";
+import {ActiveBetsListComponent} from "./components/active-bets-list/active-bets-list.component";
 
 @NgModule({
-  imports: [
-    CommonModule,
-    DashboardRoutingModule,
-    ShareModule
-  ],
-  declarations: [
-    DashboardComponent,
-    DetailActiveBetModalComponent,
-    DetailDrawBetModalComponent,
-    DetailLossesBetModalComponent,
-    DetailPendingBetModalComponent,
-    DetailWonBetModalComponent,
-    ResumeComponent
-  ],
-  entryComponents: [
-    DetailActiveBetModalComponent,
-    DetailDrawBetModalComponent,
-    DetailLossesBetModalComponent,
-    DetailPendingBetModalComponent,
-    DetailWonBetModalComponent
-  ]
+    imports: [
+        CommonModule,
+        DashboardRoutingModule,
+        ShareModule
+    ],
+    declarations: [
+        DashboardComponent,
+        DetailActiveBetModalComponent,
+        DetailDrawBetModalComponent,
+        DetailLossesBetModalComponent,
+        DetailPendingBetModalComponent,
+        DetailWonBetModalComponent,
+        ResumeComponent,
+        ActiveBetsPageComponent,
+        ActiveBetsListComponent
+    ],
+    entryComponents: [
+        DetailActiveBetModalComponent,
+        DetailDrawBetModalComponent,
+        DetailLossesBetModalComponent,
+        DetailPendingBetModalComponent,
+        DetailWonBetModalComponent
+    ],
+    providers: [
+        BetsO2OService
+    ]
 })
 export class DashboardModule {
 }

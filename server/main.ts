@@ -1,12 +1,12 @@
 import './publish';
 import './methods'
+import './imports/cron/index'
 import {Meteor} from 'meteor/meteor';
 
 declare const ServiceConfiguration: any;
 
 Meteor.startup(() => {
 
-    SyncedCron.start();
     // Configuring oAuth services
     const services = Meteor.settings.private.oAuth;
 

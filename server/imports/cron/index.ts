@@ -1,4 +1,6 @@
-import {MatchesColl} from "../matches/collection";
+import {MatchesColl} from "../../../imports/collections/matches";
+
+SyncedCron.start();
 
 SyncedCron.add({
   name: 'Cron de pagos',
