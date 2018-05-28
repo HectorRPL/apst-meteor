@@ -1,5 +1,6 @@
 import './publish';
 import './methods'
+import './hooks'
 import './imports/cron/index'
 import {Meteor} from 'meteor/meteor';
 

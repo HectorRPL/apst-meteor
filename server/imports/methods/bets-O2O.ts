@@ -11,14 +11,15 @@ Meteor.methods({
         }
 
         check(bet, {
-            status: Match.Maybe(String),
             matchId: String,
             amount: Number,
             forecastCreator: String
         });
 
+        bet.amountCreator = bet.amount;
         bet.creatorUserId = this.userId;
         bet.creationDate = new Date();
+        bet.status = 'pending';
         bet.public = true;
 
         return {
@@ -30,18 +31,20 @@ Meteor.methods({
             throw new Meteor.Error('unauthorized',
                 'usuario no logeado');
         }
-        console.log(_id);
         check(_id, {
             _id: String
         });
         const bet = BetsO2OColl.collection.findOne(_id);
-        console.log(bet);
         return {
             betId: BetsO2OColl.collection.update(_id, {
                 $set: {
                     oponentUserId: this.userId,
                     acceptDate: new Date(),
+                    amountOponent: bet.amount,
                     forecastOponent: bet.forecastCreator === 'home' ? 'away' : 'home'
+                },
+                $inc:{
+                    amount: bet.amount
                 }
             })
         };

@@ -21,3 +21,4 @@ accounts-facebook
 accounts-google
 percolate:synced-cron
 service-configuration
+matb33:collection-hooks
