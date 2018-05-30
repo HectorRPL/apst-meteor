@@ -1,3 +1,5 @@
+@import "../../../variables";
+
 .fijado-abajo-del-nabvar {
   position: fixed;
   top: 56px;
@@ -9,3 +11,11 @@
 section {
   padding-top: 30px;
 }
+
+// Se repite este hover ya que es un componente especial de bootstrap
+
+a:hover {
+  border: none;
+  text-decoration: none;
+}
+

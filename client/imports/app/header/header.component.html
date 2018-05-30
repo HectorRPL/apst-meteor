@@ -1,6 +1,6 @@
-<div class="navbar row fixed-top fondo-color-primario">
+<div class="navbar row fixed-top background-secondary-b">
   <div class="col-6">
-    <a class="navbar-brand" routerLink="/leagues/top-list"> GreedSports </a>
+    <a class="navbar-brand" routerLink="/leagues/top-list"> <strong>GREEDSPORTS</strong> </a>
   </div>
   <div class="col-6" *ngIf="fullyCharged">
     <user-menu-logged-in
@@ -8,7 +8,7 @@
       [user]="user$">
     </user-menu-logged-in>
     <login-register-buttons
-      class="pull-right"
+      class="float-right"
       *ngIf="!user$">
     </login-register-buttons>
   </div>

@@ -1,1 +1,283 @@
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import "./variables";
+
+// El siguiente código es para crear tabs verticales. Estas tabs se usan para mostrar los métodos de retiro/depósito
+deposit-types-tabs {
+  .nav {
+  }
+}
+
+/**************************************************
+                      basics
+**************************************************/
+
+.background-primary-a {
+  background-color: $primary-a;
+}
+
+.background-secondary-a {
+  background-color: $secondary-a;
+}
+
+.background-secondary-b {
+  background-color: $secondary-b;
+}
+
+.secondary {
+  color: $secondary-a;
+}
+
+/**************************************************
+                      font-face
+**************************************************/
+
+@font-face {
+  font-family: 'helveticaneue';
+  font-style: normal;
+  font-weight: normal;
+  // src: url(../public/font/HelveticaNeueLTStdLt.woff) format('woff');
+  // src: url(./HelveticaNeueLTStdLt.woff) format('woff');
+  src: local('helveticaneue'), url('../public/font/HelveticaNeueLTStdLt.woff') format('woff');
+}
+
+/**************************************************
+                      body
+**************************************************/
+
+body {
+  // font-family: 'helveticaneue' !important;
+  color: $secondary-d !important;
+  background-color: $secondary-a;
+
+}
+
+/**************************************************
+                        h
+**************************************************/
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: $secondary-d;
+}
+
+/**************************************************
+                      input
+**************************************************/
+
+input {
+  border-radius: 0px !important;
+  border-color: transparent !important;
+  background-color: $secondary-c !important;
+}
+
+input:focus {
+  outline: none !important;
+  border: 1px solid $secondary-d !important;
+  box-shadow: none !important;
+}
+
+// Da estilo a los inputs que están mal llenados
+
+.invalid-feedback {
+  display: none;
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 80%;
+  color: $danger;
+}
+
+.was-validated
+.form-control:invalid,
+.form-control.is-invalid,
+.was-validated
+.custom-select:invalid,
+.custom-select.is-invalid {
+  border-color: $danger !important;
+}
+
+.was-validated
+.form-control:invalid:focus,
+.form-control.is-invalid:focus,
+.was-validated
+.custom-select:invalid:focus,
+.custom-select.is-invalid:focus {
+  border-color: $danger !important;
+  box-shadow: $danger !important;
+}
+
+// placeholder
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: $secondary-d !important;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: $secondary-d !important;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: $secondary-d !important;
+}
+
+/**************************************************
+                        a
+**************************************************/
+
+a {
+  cursor: pointer;
+  color: inherit;
+}
+
+a:hover {
+  border: none !important;
+  text-decoration: none;
+  color: inherit;
+  text-transform: none;
+  margin: 0 !important;
+}
+
+/**************************************************
+                    buttons
+**************************************************/
+
+.btn {
+  border-radius: 0px;
+  border: none;
+}
+
+.btn-primary {
+  background-color: $secondary-c;
+  color: $secondary-d;
+
+  @include hover-focus {
+    background-color: $secondary-d;
+    color: $secondary-c;
+  }
+}
+
+button:active {
+  background-color: transparent !important;
+}
+
+/**************************************************
+                No desbordar texto
+**************************************************/
+
+// Ajusta los textos muy largos paque no se desborden y no estropear los estilos
+
+.no-overflow {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/**************************************************
+                      modal
+**************************************************/
+
+.modal-header,
+.modal-body,
+.modal-footer {
+  background-color: $secondary-a;
+  border-color: $secondary-a;
+  border-radius: 0px;
+}
+
+/**************************************************
+                      tabs
+**************************************************/
+
+.nav-link {
+  color: $secondary-c;
+
+  @include hover-focus {
+    color: $secondary-d;
+  }
+
+}
+
+// Se colorea el borde color blanco que viene por default (nav-tabs) en bootstrap
+
+ul {
+  border-bottom: 1px solid $secondary-a !important;
+  background-color: $secondary-b !important;
+}
+
+/**************************************************
+                      acordeon / card
+**************************************************/
+
+.card {
+  border-color: $secondary-b;
+  border-radius: 0px;
+}
+
+.card > .card-header {
+
+  background-color: $secondary-b !important;
+  color: $secondary-c !important;
+  border-color: transparent;
+  border-radius: 0px;
+}
+
+.card-body {
+  background-color: $secondary-b !important;
+}
+
+deposit-types-tabs {
+
+  .card > .card-header {
+    background-color: $secondary-b !important;
+    border-color: transparent !important;
+    color: $secondary-d !important;
+  }
+
+  .card-body {
+    background-color: $secondary-a !important;
+    color: $secondary-c !important;
+  }
+}
+
+/**************************************************
+                      active
+**************************************************/
+
+.active {
+  border-color: $secondary-a !important;;
+  background-color: $secondary-a !important;
+  color: $secondary-d !important;
+}
+
+.router-link-active {
+  border-color: $secondary-a !important;;
+  background-color: $secondary-a !important;
+  font-weight: bolder !important;
+  color: $secondary-d !important;
+}
+
+/**************************************************
+                tache de modales
+**************************************************/
+
+.close {
+  color: $secondary-d;
+
+  @include hover-focus {
+    color: $secondary-d;
+    text-decoration: none;
+    opacity: .75;
+  }
+}
+
+/**************************************************
+                    pendientes
+**************************************************/
+
+// Intentar unificar este active que se encuentra en las navegaciones del dashboard
+.a-tag-active {
+  font-weight: bolder;
+}

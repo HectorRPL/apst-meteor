@@ -1,3 +1,5 @@
+@import "../../../../../../variables";
+
 .dropdown-toggle::after {
   display: none;
 }
@@ -5,11 +7,6 @@
 .force-dropdown-menu-right {
   right: 0;
   left: auto !important; // Reset the default from `.dropdown-menu`
-}
-
-.navbar-brand {
-  color: black;
-  font-weight: bolder;
 }
 
 ul {
@@ -29,3 +26,6 @@ ul {
   }
 }
 
+a {
+  color: $secondary-d !important;
+}
