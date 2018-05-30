@@ -1,8 +1,8 @@
 <div class="navbar row fixed-top background-secondary-a">
-  <div class="col-6">
+  <div class="col-4">
     <a class="navbar-brand" routerLink="/leagues/top-list"> <strong>GREEDSPORTS</strong> </a>
   </div>
-  <div class="col-6" *ngIf="fullyCharged">
+  <div class="col-8" *ngIf="fullyCharged">
     <user-menu-logged-in
       *ngIf="user$"
       [user]="user$">

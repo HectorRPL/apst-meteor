@@ -12,6 +12,7 @@
 ul {
   position: relative;
   top: 10px;
+  background-color: transparent !important;
 
   list-style-type: none;
   display: -webkit-box !important;
@@ -19,13 +20,5 @@ ul {
   display: flex !important;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
-}
-@media screen and (max-width: 767px) {
-  .hide-in-responsive {
-    display: none !important;
-  }
-}
 
-a {
-  color: $secondary-c !important;
 }

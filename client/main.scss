@@ -34,24 +34,29 @@ deposit-types-tabs {
 // font blockletter (cuadrada deportiva)
 
 @font-face {
-  font-family: 'blockletter';
+  font-family: "blockLetter";
   font-style: normal;
   font-weight: normal;
-  // src: url(../public/font/HelveticaNeueLTStdLt.woff) format('woff');
-  // src: url(./HelveticaNeueLTStdLt.woff) format('woff');
-  src: local('blockletter'), url('/font/blockletter.otf') format('woff');
+  // todo falta importar a eot para internet IE 8-11
+  src: local("blockLetter"), url("/font/blockLetter.otf") format("opentype");
 }
 
+// font helvetica neune
 
-
-
+@font-face {
+  font-family: "helveticaNeueLight";
+  font-style: normal;
+  font-weight: normal;
+  // todo falta importar a eot para internet IE 8-11
+  src: local("helveticaNeueLight"), url("/font/helveticaNeueLight.otf") format("opentype");
+}
 
 /**************************************************
                       body
 **************************************************/
 
 body {
-  font-family: 'blockletter' !important;
+  font-family: "blockLetter", Helvetica, Arial, sans-serif;
   color: $secondary-b !important;
   background-color: $secondary-a;
 
@@ -75,6 +80,7 @@ h5 {
 
 input {
   color: $secondary-b !important;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: bolder;
   border-radius: 0px !important;
   border-color: transparent !important;
@@ -320,6 +326,22 @@ deposit-types-tabs {
   }
 }
 
+
+/**************************************************
+  pantallas/componentes que usan Helvetica Neue
+**************************************************/
+
+app-footer,
+app-not-found,
+app-policies,
+app-notice-of-privacy,
+app-reset-password,
+app-verify-email,
+ngb-alert {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+
 /**************************************************
                     pendientes
 **************************************************/
@@ -327,4 +349,11 @@ deposit-types-tabs {
 // Intentar unificar este active que se encuentra en las navegaciones del dashboard
 .a-tag-active {
   font-weight: bolder;
+}
+
+// Este es muy importante, oculta elementos cuando se es responsive
+@media screen and (max-width: 767px) {
+  .hide-in-responsive {
+    display: none !important;
+  }
 }
