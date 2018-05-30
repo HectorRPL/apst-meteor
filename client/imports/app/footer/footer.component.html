@@ -1,27 +1,29 @@
 <section class="footer fixed-bottom" [ngClass]="{'scrollable': expand}">
-  <small>
-    <div class="row">
-      <div class="col-sm-12 text-center">
-        <a (click)="collapse()">
-          <i class="fas" [ngClass]="{'fa-chevron-up': !expand, 'fa-chevron-down': expand}"></i>
-        </a>
+  <div class="background-footer">
+    <small>
+      <div class="row">
+        <div class="col-sm-12 text-center">
+          <a (click)="collapse()">
+            <i class="fas" [ngClass]="{'fa-chevron-up': !expand, 'fa-chevron-down': expand}"></i>
+          </a>
+        </div>
       </div>
-    </div>
-    <div class="row" *ngIf="expand">
-      <div class="col-sm-12 mb-4 text-center">
-        <br>
-        <a><i class="fab fa-facebook-f"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
-        <a><i class="fab fa-twitter"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
-        <a><i class="fab fa-google"></i></a>
+      <div class="row" *ngIf="expand">
+        <div class="col-sm-12 mb-4 text-center">
+          <br>
+          <a><i class="fab fa-facebook-f"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+          <a><i class="fab fa-twitter"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+          <a><i class="fab fa-google"></i></a>
+        </div>
+        <div class="col-sm-12 mb-4 text-center">
+          <a routerLinkActive="a-tag-active" routerLink="/notice-of-privacy">Privacy Notice</a> <br>
+          <a routerLinkActive="a-tag-active" routerLink="/policies">Use conditions</a> <br>
+          <a routerLinkActive="a-tag-active" routerLink="/policies">Responsible Gaming</a>
+        </div>
+        <div class="col-sm-12 mb-4 text-center">
+          <p class="copyrightm-b-0">© 2018 <a href="#">www.apst.com</a> Todos los derechos reservados.</p>
+        </div>
       </div>
-      <div class="col-sm-12 mb-4 text-center">
-        <a routerLinkActive="a-tag-active" routerLink="/notice-of-privacy">Privacy Notice</a> <br>
-        <a routerLinkActive="a-tag-active" routerLink="/policies">Use conditions</a> <br>
-        <a routerLinkActive="a-tag-active" routerLink="/policies">Responsible Gaming</a>
-      </div>
-      <div class="col-sm-12 mb-4 text-center">
-        <p class="copyrightm-b-0">© 2018 <a href="#">www.apst.com</a> Todos los derechos reservados.</p>
-      </div>
-    </div>
-  </small>
+    </small>
+  </div>
 </section>

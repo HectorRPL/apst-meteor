@@ -1,12 +1,6 @@
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 @import "./variables";
 
-// El siguiente código es para crear tabs verticales. Estas tabs se usan para mostrar los métodos de retiro/depósito
-deposit-types-tabs {
-  .nav {
-  }
-}
-
 /**************************************************
                       basics
 **************************************************/
@@ -80,7 +74,7 @@ h5 {
 
 input {
   color: $secondary-b !important;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "helveticaNeue", Helvetica, Arial, sans-serif;
   font-weight: bolder;
   border-radius: 0px !important;
   border-color: transparent !important;
@@ -156,6 +150,11 @@ a:hover {
   color: inherit;
   text-transform: none;
   margin: 0 !important;
+  background-color: transparent;
+}
+
+a:target {
+  background-color: transparent;
 }
 
 /**************************************************
@@ -200,28 +199,14 @@ button:active {
 .modal {
   background-color: $primary-a;
 
-  ///////////// <centrar> por si queremos una imagen atrás de los modales
-  /*background:url(/img/fondo-2.jpg);
-  background-size: cover;*/
+  ///////////// <centrar>
+  background:url(/img/chevron.png);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   ///////////// </centrar>
 }
-
-@media screen and (min-width: 576px) {
-  .modal {
-    // forma de chevron
-
-    -webkit-clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
-    clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
-
-
-    // forma de estrella
-    /*
-    -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-    */
-  }
-}
-
 
 .modal-content {
   // border-color: $secondary-c;
@@ -242,10 +227,10 @@ button:active {
 **************************************************/
 
 .nav-link {
-  color: $secondary-c;
+  color: $secondary-b;
 
   @include hover-focus {
-    color: $secondary-c;
+    color: $primary-a;
   }
 
 }
@@ -254,7 +239,7 @@ button:active {
 
 ul {
   border-bottom: 1px solid $secondary-a !important;
-  background-color: $secondary-b !important;
+  background-color: $secondary-a !important;
 }
 
 /**************************************************
@@ -276,17 +261,11 @@ ul {
 }
 
 .card-body {
-  background-color: $secondary-c !important;
+  background-color: $secondary-a !important;
   color: $secondary-b;
 }
 
 deposit-types-tabs {
-
-  .card > .card-header {
-    background-color: $secondary-b !important;
-    border-color: transparent !important;
-    color: $secondary-c !important;
-  }
 
   .card-body {
     background-color: $secondary-a !important;
@@ -299,13 +278,7 @@ deposit-types-tabs {
 **************************************************/
 
 .active {
-  border-color: $secondary-a !important;;
-  background-color: $secondary-a !important;
-  color: $secondary-c !important;
-}
-
-.router-link-active {
-  font-weight: bolder !important;
+  background-color: transparent !important;
   color: $primary-a !important;
 }
 
@@ -316,6 +289,7 @@ deposit-types-tabs {
 .close {
   color: $secondary-b;
   text-shadow: none;
+  font-family: "helveticaNeue", Helvetica, Arial, sans-serif;
 
   @include hover-focus {
     color: $primary-a;
@@ -328,7 +302,7 @@ deposit-types-tabs {
 
 
 /**************************************************
-  pantallas/componentes que usan Helvetica Neue
+  pantallas/componentes que usan helveticaNeue
 **************************************************/
 
 app-footer,
@@ -338,7 +312,21 @@ app-notice-of-privacy,
 app-reset-password,
 app-verify-email,
 ngb-alert {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "helveticaNeue", Helvetica, Arial, sans-serif;
+}
+
+
+/**************************************************
+                    dropdown-menu
+**************************************************/
+/*Son los cuadros que aparecen cuando uno le da click a un ícono del nabvar, por ejemplo al monito user*/
+
+.dropdown-menu {
+  border-radius: 0px;
+
+  a:hover {
+    background-color: transparent;
+  }
 }
 
 
@@ -346,14 +334,10 @@ ngb-alert {
                     pendientes
 **************************************************/
 
-// Intentar unificar este active que se encuentra en las navegaciones del dashboard
-.a-tag-active {
-  font-weight: bolder;
-}
-
 // Este es muy importante, oculta elementos cuando se es responsive
 @media screen and (max-width: 767px) {
   .hide-in-responsive {
     display: none !important;
   }
 }
+
