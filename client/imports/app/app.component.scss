@@ -1,4 +1,9 @@
+@import "../../variables";
+
 .main-container {
+  background:url(/img/pattern-9.png);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   margin-top: 56px;
   padding: 15px;
   -ms-overflow-x: hidden;

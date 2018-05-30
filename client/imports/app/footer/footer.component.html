@@ -1,9 +1,9 @@
-<section class="footer fixed-bottom background-secondary" [ngClass]="{'scrollable': expand}">
+<section class="footer fixed-bottom" [ngClass]="{'scrollable': expand}">
   <small>
     <div class="row">
       <div class="col-sm-12 text-center">
         <a (click)="collapse()">
-          <i class="fa" [ngClass]="{'fa-chevron-up': !expand, 'fa-chevron-down': expand}"></i>
+          <i class="fas" [ngClass]="{'fa-chevron-up': !expand, 'fa-chevron-down': expand}"></i>
         </a>
       </div>
     </div>
@@ -16,9 +16,7 @@
       </div>
       <div class="col-sm-12 mb-4 text-center">
         <a routerLinkActive="a-tag-active" routerLink="/notice-of-privacy">Privacy Notice</a> <br>
-
         <a routerLinkActive="a-tag-active" routerLink="/policies">Use conditions</a> <br>
-
         <a routerLinkActive="a-tag-active" routerLink="/policies">Responsible Gaming</a>
       </div>
       <div class="col-sm-12 mb-4 text-center">

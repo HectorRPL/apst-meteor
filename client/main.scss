@@ -31,22 +31,28 @@ deposit-types-tabs {
                       font-face
 **************************************************/
 
+// font blockletter (cuadrada deportiva)
+
 @font-face {
-  font-family: 'helveticaneue';
+  font-family: 'blockletter';
   font-style: normal;
   font-weight: normal;
   // src: url(../public/font/HelveticaNeueLTStdLt.woff) format('woff');
   // src: url(./HelveticaNeueLTStdLt.woff) format('woff');
-  src: local('helveticaneue'), url('../public/font/HelveticaNeueLTStdLt.woff') format('woff');
+  src: local('blockletter'), url('/font/blockletter.otf') format('woff');
 }
+
+
+
+
 
 /**************************************************
                       body
 **************************************************/
 
 body {
-  // font-family: 'helveticaneue' !important;
-  color: $secondary-d !important;
+  font-family: 'blockletter' !important;
+  color: $secondary-b !important;
   background-color: $secondary-a;
 
 }
@@ -60,7 +66,7 @@ h2,
 h3,
 h4,
 h5 {
-  color: $secondary-d;
+  color: $secondary-b;
 }
 
 /**************************************************
@@ -68,6 +74,8 @@ h5 {
 **************************************************/
 
 input {
+  color: $secondary-b !important;
+  font-weight: bolder;
   border-radius: 0px !important;
   border-color: transparent !important;
   background-color: $secondary-c !important;
@@ -75,8 +83,26 @@ input {
 
 input:focus {
   outline: none !important;
-  border: 1px solid $secondary-d !important;
+  border: 1px solid $secondary-c !important;
   box-shadow: none !important;
+}
+
+// placeholder
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: $secondary-b !important;
+  font-weight: 100;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: $secondary-b !important;
+  font-weight: 100;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: $secondary-b !important;
+  font-weight: 100;
 }
 
 // Da estilo a los inputs que están mal llenados
@@ -108,21 +134,6 @@ input:focus {
   box-shadow: $danger !important;
 }
 
-// placeholder
-
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: $secondary-d !important;
-  opacity: 1; /* Firefox */
-}
-
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color: $secondary-d !important;
-}
-
-::-ms-input-placeholder { /* Microsoft Edge */
-  color: $secondary-d !important;
-}
-
 /**************************************************
                         a
 **************************************************/
@@ -133,6 +144,7 @@ a {
 }
 
 a:hover {
+  color: $primary-a !important;
   border: none !important;
   text-decoration: none;
   color: inherit;
@@ -150,12 +162,11 @@ a:hover {
 }
 
 .btn-primary {
-  background-color: $secondary-c;
-  color: $secondary-d;
+  background-color: $secondary-c !important;
+  color: $secondary-b !important;
 
   @include hover-focus {
-    background-color: $secondary-d;
-    color: $secondary-c;
+    background-color: $primary-a !important;
   }
 }
 
@@ -179,6 +190,39 @@ button:active {
                       modal
 **************************************************/
 
+// El fondo que aparece atrás del modal
+.modal {
+  background-color: $primary-a;
+
+  ///////////// <centrar> por si queremos una imagen atrás de los modales
+  /*background:url(/img/fondo-2.jpg);
+  background-size: cover;*/
+  ///////////// </centrar>
+}
+
+@media screen and (min-width: 576px) {
+  .modal {
+    // forma de chevron
+
+    -webkit-clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+    clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+
+
+    // forma de estrella
+    /*
+    -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    */
+  }
+}
+
+
+.modal-content {
+  // border-color: $secondary-c;
+  border-radius: 0px;
+
+}
+
 .modal-header,
 .modal-body,
 .modal-footer {
@@ -195,7 +239,7 @@ button:active {
   color: $secondary-c;
 
   @include hover-focus {
-    color: $secondary-d;
+    color: $secondary-c;
   }
 
 }
@@ -212,20 +256,22 @@ ul {
 **************************************************/
 
 .card {
-  border-color: $secondary-b;
+  border-color: $secondary-c;
   border-radius: 0px;
+  background-color: $secondary-c !important;
 }
 
 .card > .card-header {
 
-  background-color: $secondary-b !important;
-  color: $secondary-c !important;
+  background-color: $secondary-c !important;
+  color: $secondary-b !important;
   border-color: transparent;
   border-radius: 0px;
 }
 
 .card-body {
-  background-color: $secondary-b !important;
+  background-color: $secondary-c !important;
+  color: $secondary-b;
 }
 
 deposit-types-tabs {
@@ -233,7 +279,7 @@ deposit-types-tabs {
   .card > .card-header {
     background-color: $secondary-b !important;
     border-color: transparent !important;
-    color: $secondary-d !important;
+    color: $secondary-c !important;
   }
 
   .card-body {
@@ -249,14 +295,12 @@ deposit-types-tabs {
 .active {
   border-color: $secondary-a !important;;
   background-color: $secondary-a !important;
-  color: $secondary-d !important;
+  color: $secondary-c !important;
 }
 
 .router-link-active {
-  border-color: $secondary-a !important;;
-  background-color: $secondary-a !important;
   font-weight: bolder !important;
-  color: $secondary-d !important;
+  color: $primary-a !important;
 }
 
 /**************************************************
@@ -264,12 +308,15 @@ deposit-types-tabs {
 **************************************************/
 
 .close {
-  color: $secondary-d;
+  color: $secondary-b;
+  text-shadow: none;
 
   @include hover-focus {
-    color: $secondary-d;
+    color: $primary-a;
     text-decoration: none;
-    opacity: .75;
+    box-shadow: none;
+    border: none;
+    // opacity: .75;
   }
 }
 

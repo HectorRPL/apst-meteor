@@ -1,8 +1,9 @@
 @import "../../../../../../variables";
 
-
 .card-body {
-  padding: .5rem;
+  // padding: .5rem; ¿que será mejor el rem o el pixel?
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .card:hover,
@@ -13,14 +14,13 @@
 .title {
   font-size: x-large;
   margin: 0px;
-  padding: 0px;
+  padding: 0 0 5px 0px;
   border: none;
-  font-weight: bolder;
+  // font-weight: bolder;
 }
 
 .subtitle {
   font-size: smaller;
-  color: $secondary-c;
   margin: 0px;
   padding: 0px;
   border: none;

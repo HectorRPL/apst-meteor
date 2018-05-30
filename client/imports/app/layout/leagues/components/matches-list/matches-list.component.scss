@@ -1,7 +1,12 @@
 @import "../../../../../../variables";
 
+.card:hover,
+.card-body:hover {
+  background-color: $primary-a !important;
+}
+
 .card {
-  color: $secondary-d;
+  color: $secondary-c;
   border-radius: 0px;
   border: none;
   background-color: $secondary-b;

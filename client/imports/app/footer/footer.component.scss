@@ -1,7 +1,9 @@
+@import "../../../variables";
+
 .footer {
-  background-color: lightgray;
-  border: 1px solid white;
-  border-top-color: lightgray;
+  color: $secondary-b;
+  background-color: $primary-a;
+  border: none;
 }
 
 .scrollable {

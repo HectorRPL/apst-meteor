@@ -1,6 +1,6 @@
 @import "../../../variables";
 
-.fijado-abajo-del-nabvar {
+.fixed-bottom-header {
   position: fixed;
   top: 56px;
   right: 0;
@@ -10,6 +10,10 @@
 
 section {
   padding-top: 30px;
+}
+
+section > div {
+  background-color: $secondary-a;
 }
 
 // Se repite este hover ya que es un componente especial de bootstrap
