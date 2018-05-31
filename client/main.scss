@@ -240,7 +240,11 @@ button:active {
   @include hover-focus {
     color: $primary-a;
   }
+}
 
+.nav-tabs
+.nav-link {
+  border: none;
 }
 
 // Se colorea el borde color blanco que viene por default (nav-tabs) en bootstrap
