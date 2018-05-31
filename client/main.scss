@@ -2,26 +2,6 @@
 @import "./variables";
 
 /**************************************************
-                      basics
-**************************************************/
-
-.background-primary-a {
-  background-color: $primary-a;
-}
-
-.background-secondary-a {
-  background-color: $secondary-a;
-}
-
-.background-secondary-b {
-  background-color: $secondary-b;
-}
-
-.secondary {
-  color: $secondary-a;
-}
-
-/**************************************************
                       font-face
 **************************************************/
 
@@ -46,6 +26,42 @@
 }
 
 /**************************************************
+                      basics
+**************************************************/
+
+.background-primary-a {
+  background-color: $primary-a;
+}
+
+.background-secondary-a {
+  background-color: $secondary-a;
+}
+
+.background-secondary-b {
+  background-color: $secondary-b;
+}
+
+.secondary {
+  color: $secondary-a;
+}
+
+// Esta clase es algo especial y confusa. Pero aquí lo explico.
+// La letra que predomna es la letra tipo deportes, y cuando se
+// usen textos para leer o escribir se usará esta clase.
+// No quería usar este tipo de clases, y que la app estuviera
+// con el menor de class posibles. La idea era casi casi
+// reescribir bootstrap, pero debido a la línea gráfica tendrá
+// que ser así, de momento.
+
+.font-helvetica-neue {
+  font-family: "helveticaNeue", Helvetica, Arial, sans-serif;
+  a {
+    text-decoration: underline;
+  }
+}
+
+
+/**************************************************
                       body
 **************************************************/
 
@@ -67,6 +83,7 @@ h4,
 h5 {
   color: $secondary-b;
 }
+
 
 /**************************************************
                       input
@@ -90,17 +107,20 @@ input:focus {
 // placeholder
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  font-family: "blockLetter", Helvetica, Arial, sans-serif;
   color: $secondary-b !important;
   font-weight: 100;
   opacity: 1; /* Firefox */
 }
 
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
+  font-family: "blockLetter", Helvetica, Arial, sans-serif;
   color: $secondary-b !important;
   font-weight: 100;
 }
 
 ::-ms-input-placeholder { /* Microsoft Edge */
+  font-family: "blockLetter", Helvetica, Arial, sans-serif;
   color: $secondary-b !important;
   font-weight: 100;
 }
