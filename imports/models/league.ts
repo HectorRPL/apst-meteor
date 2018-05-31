@@ -4,4 +4,6 @@ export interface League {
     apiLeagueId: number;
     important: boolean;
     name: string;
+    startDate: Date;
+    endDate: Date;
 }

@@ -28,7 +28,6 @@ export class BetsO2OService {
   }
 
   deleteBet020(betId: string): Observable<{}> {
-    console.log('otra vez we, va la segunda', betId);
     return MeteorObservable.call('deleteBetO2O', {_id: betId});
   }
 
