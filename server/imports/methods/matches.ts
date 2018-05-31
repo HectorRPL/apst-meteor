@@ -1,5 +1,6 @@
 import {Match} from '../../../imports/models/match';
 import {MatchesColl} from '../../../imports/collections/matches';
+import {check} from 'meteor/check';
 
 Meteor.methods({
     insertMatch(match: Match) {

@@ -4,21 +4,33 @@ import {BetsO2OColl} from '../../../imports/collections/bets-O2O';
 import {ChipsColl} from '../../../imports/collections/chips';
 
 BetsO2OColl.collection.after.insert(function (userId, doc) {
-    console.log('despues de insertar ', userId, doc);
-    ChipsColl.collection.update({ownerId: userId}, {$inc: {numChips: (-1 * doc.amountCreator)}});
+    ChipsColl.collection.update({ownerId: userId}, {$inc: {numChips: (-1 * doc.amount)}});
 });
 
 BetsO2OColl.collection.after.update(function (userId, doc, fieldNames, modifier, options) {
 
-    check(modifier, {$set: Object});
-
-    if (_.has(modifier.$set, 'status') && modifier.$set.status === 'cancel') {
+    if (_.has(modifier, '$set')
+        &&_.has(modifier.$set, 'status')
+        && modifier.$set.status === 'cancel') {
 
         ChipsColl.collection.update({ownerId: userId},
             {
-                $inc: {numChips: (doc.amountCreator)}
+                $inc: {numChips: (doc.amount)}
             }
         );
     }
+
+    if (_.has(modifier, '$set')
+        &&_.has(modifier.$set, 'oponentUserId')) {
+
+        ChipsColl.collection.update({ownerId: userId},
+            {
+                $inc: {numChips: (-1 * doc.amountOponent)}
+            }
+        );
+
+    }
+
+
 
 });

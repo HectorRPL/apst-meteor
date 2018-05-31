@@ -21,9 +21,9 @@ export class BetListPageComponent implements OnInit {
   }
 
   getBets() {
-    MeteorObservable.subscribe('betsO2O', {}).subscribe(() => {
+    MeteorObservable.subscribe('betsO2O', {status: {$ne: 'paid'}}).subscribe(() => {
       MeteorObservable.autorun().subscribe(() => {
-        this.bets$ = this.betServ.getBetsO2O({}, {});
+        this.bets$ = this.betServ.getBetsO2O({status: {$ne: 'paid'}}, {});
       });
     });
   }

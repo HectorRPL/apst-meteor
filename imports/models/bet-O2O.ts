@@ -3,6 +3,8 @@ export interface BetO2O {
     matchId: string;
     creatorUserId: string;
     oponentUserId?: string;
+    amountCreator: number;
+    amountOponent?: number;
     amount: number;
     forecastCreator: string;
     forecastOponent?: string;
