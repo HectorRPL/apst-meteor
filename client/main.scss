@@ -180,18 +180,6 @@ button:active {
 }
 
 /**************************************************
-                No desbordar texto
-**************************************************/
-
-// Ajusta los textos muy largos paque no se desborden y no estropear los estilos
-
-.no-overflow {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-/**************************************************
                       modal
 **************************************************/
 
@@ -243,7 +231,7 @@ ul {
 }
 
 /**************************************************
-                      acordeon / card
+                acordeon / card
 **************************************************/
 
 .card {
@@ -329,15 +317,46 @@ ngb-alert {
   }
 }
 
-
 /**************************************************
-                    pendientes
+                      table
 **************************************************/
 
-// Este es muy importante, oculta elementos cuando se es responsive
+th {
+  border: none !important;
+  border-bottom: solid $secondary-c !important;
+  font-family: "helveticaNeue", Helvetica, Arial, sans-serif;
+}
+
+td {
+  font-family: "helveticaNeue", Helvetica, Arial, sans-serif;
+}
+
+
+/**************************************************
+***************************************************
+********************* VARIOS **********************
+***************************************************
+**************************************************/
+
+
+/**************************************************
+      Oculta elementos cuando se es responsive
+**************************************************/
+
 @media screen and (max-width: 767px) {
   .hide-in-responsive {
     display: none !important;
   }
 }
 
+/**************************************************
+                No desbordar texto
+**************************************************/
+
+// Ajusta los textos muy largos paque no se desborden y no estropear los estilos
+
+.no-overflow {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
