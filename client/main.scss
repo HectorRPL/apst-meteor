@@ -384,3 +384,22 @@ td {
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+
+
+.pagination-previous {
+  background-color: transparent;
+  color:  $secondary-b !important;
+
+}
+
+.current {
+  background-color: transparent !important;
+  color:  $primary-a !important;
+}
+
+.ngx-pagination {
+  a {
+    background-color: transparent !important;
+    color:  $secondary-b;
+  }
+}
