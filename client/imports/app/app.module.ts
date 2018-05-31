@@ -6,7 +6,7 @@ import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing.module';
 import {HttpErrorHandlerService} from './services/http-error-handler.service';
 import {MessagesService} from './services/messages.service';
-import {LeaguesService} from './services/leagues.service'
+import {LeaguesService} from './services/leagues/leagues.service'
 import {ShareModule} from './share/share.module';
 import {HeaderModule} from './header/header.module';
 import {FooterModule} from './footer/footer.module';

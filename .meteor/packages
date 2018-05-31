@@ -22,3 +22,4 @@ accounts-google
 percolate:synced-cron
 service-configuration
 matb33:collection-hooks
+tmeasday:publish-counts
