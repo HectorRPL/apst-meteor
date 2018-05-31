@@ -9,6 +9,7 @@
 .card:hover,
 .card-body:hover {
   background-color: $primary-a !important;
+  color: $secondary-b !important;
 }
 
 .card {
@@ -19,7 +20,8 @@
 }
 
 .card-body {
-  padding: .5rem;
+  padding: 0px;
+
 }
 
 .offline {
@@ -28,9 +30,9 @@
 }
 
 .time {
-  font-size: xx-small;
   position: relative;
-  top: 5px;
+  top: 10px;
+  letter-spacing: 1px;
 }
 
 .day {
@@ -39,8 +41,7 @@
 
 .month {
   position: relative;
-  bottom: 2px;
-  font-size: xx-small;
+  bottom: 10px;
 }
 
 
@@ -55,4 +56,11 @@
 .col-sm-5 {
   position: relative;
   bottom: 10px;
+}
+
+.correct {
+  position: relative;
+  top: 11px;
+
+  font-size: larger;
 }

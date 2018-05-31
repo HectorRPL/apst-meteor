@@ -4,31 +4,29 @@
       <a class="card-body"
          routerLink="/app/leagues/{{apiMatch.l_id}}/match/{{apiMatch.id}}"
          routerLinkActive="disabled">
-
         <div class="row">
-          <!--HOME-->
-          <div class="col-sm-5 text-center">
-            <br>
+          <!--FECHA-->
+          <div class="col-2 text-center">
+            <small>
+              <div class="text-center time">{{apiMatch.start | date: 'h:mm'}}</div>
+            </small>
+            <small>
+              <div class="text-center day">{{apiMatch.start | date: 'dd'}}</div>
+            </small>
+            <small>
+              <div class="text-center month">{{apiMatch.start | date: 'MMMM' | uppercase}}</div>
+            </small>
+          </div>
+          <!--NOMBRES DE EQUIPO-->
+          <div class="col-8 correct">
             {{apiMatch.h | uppercase}} <br>
-            {{apiMatch.hg}}
-
+            {{apiMatch.a | uppercase}}
           </div>
-          <!--DATE-->
-          <div class="col-sm-2">
-            <div class="row">
-              <div class="col-sm-12 text-center time">{{apiMatch.start | date: 'h:mm'}}</div>
-              <div class="col-sm-12 text-center day">{{apiMatch.start | date: 'dd'}}</div>
-              <div class="col-sm-12 text-center month">{{apiMatch.start | date: 'MMMM' | uppercase}}</div>
-            </div>
-          </div>
-          <!--AWAY-->
-          <div class="col-sm-5 text-center">
-            <br>
-            {{apiMatch.a | uppercase}} <br>
+          <!--MARCADOR-->
+          <div class="col-2 correct text-center">
+            {{apiMatch.hg}} <br>
             {{apiMatch.ag}}
-
           </div>
-
         </div>
       </a>
     </div>
