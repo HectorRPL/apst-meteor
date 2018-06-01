@@ -16,6 +16,7 @@ export class CronVerify {
             .forEach((match) => {
                 const rMatch = MatchesColl.collection.findOne({_id: match._id});
                 if (rMatch.status != 'full') {
+                     console.log('Match ', rMatch);
                     tcService.asyncMatchDetail(rMatch.apiMatchId, rMatch._id);
                 }
             });

@@ -26,6 +26,7 @@
     "later": "^1.2.0",
     "meteor-node-stubs": "~0.3.3",
     "meteor-rxjs": "^0.4.8",
+    "moment-timezone": "^0.5.17",
     "ngx-pagination": "^3.1.1",
     "rxjs": "^5.5.0",
     "zone.js": "^0.8.16"
@@ -35,6 +36,7 @@
     "@types/chai": "^4.0.8",
     "@types/meteor": "^1.4.12",
     "@types/mocha": "^2.2.44",
+    "@types/moment-timezone": "^0.5.5",
     "@types/sinon": "^4.1.0",
     "chai": "^4.1.2",
     "phantomjs-prebuilt": "^2.1.16",
