@@ -3,7 +3,7 @@
     <div class="card">
       <div class="card-body" *ngIf="betO2O">
         <div class="row text-center">
-          <div class="col-12">
+          <div class="col-12 font-helvetica-neue">
             Creada por: {{betO2O.creatorUserId}}
           </div>
           <div class="col-12">
@@ -40,9 +40,18 @@
                   {{betO2O.forecastCreator}}
                 </span>
               </div>
-              <div class="col-12" *ngIf="userId && betO2O.oponentUserId">
-                <h3>Mostrar esto sólo cuando ya se haya aceptado.</h3>
+              <!--COMPARTIR APUESTA-->
+              <!--Mostrar sólo al crear y cuando la apuesta no esté aceptada-->
+              <div class="col-12 font-helvetica-neue" *ngIf="betO2O.creatorUserId === userId && !betO2O.oponentUserId">
+                <app-share-bet></app-share-bet>
               </div>
+              <!--APUESTA ACEPTADA-->
+              <!--Mostrar sólo cuando esté aceptada -->
+              <div class="col-12" *ngIf="userId && betO2O.oponentUserId">
+                <h3>Tal vez aquí podríamos poner lo de 'crear apuesta similar'</h3>
+              </div>
+              <!--ACEPTAR APUESTA-->
+              <!--Mostrar sólo cuando el usuario esté logeado y no sea el creador-->
               <div class="col-12" *ngIf="userId && betO2O.creatorUserId != userId && !betO2O.oponentUserId">
                 <app-accept-bet [userId]="userId" [betId]="betId"></app-accept-bet>
               </div>
@@ -53,33 +62,3 @@
     </div>
   </div>
 </div>
-
-
-
-
-<!--
-
-<pre>{{betO2O | json}}</pre>
-
-<div class="row">
-  <div class="col-md-6 offset-md-3">
-    <div class="card">
-      <div class="card-body text-center" *ngIf="betO2O">
-        <small>Creado por: {{betO2O.creatorUserId}}</small>
-        <h4>{{betO2O.home}}&nbsp;Vs&nbsp;{{betO2O.away}}</h4>
-        <small>{{betO2O.matchStartDate}}</small>
-        <h6>Cantidad: ${{betO2O.amount}}</h6>
-        <div *ngIf="userId && betO2O.oponentUserId">
-          <h3>Solo cuando ya se ha aceptado</h3>
-        </div>
-        <div *ngIf="betO2O.creatorUserId === userId && !betO2O.oponentUserId">
-          <app-share-bet></app-share-bet>
-        </div>
-        <div *ngIf="userId && betO2O.creatorUserId != userId && !betO2O.oponentUserId">
-          <app-accept-bet [userId]="userId" [betId]="betId"></app-accept-bet>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
--->
