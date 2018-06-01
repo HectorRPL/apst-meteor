@@ -1,7 +1,21 @@
+@import "../../../variables";
+
 .footer {
-  background-color: lightgray;
-  border: 1px solid white;
-  border-top-color: lightgray;
+  color: $secondary-b;
+  background-color: $primary-a;
+  border: none;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding: 0px;
+  margin: 0px;
+}
+
+.background-footer {
+  padding: 0px;
+  margin: 0px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .scrollable {
@@ -13,3 +27,4 @@
   overflow-y: scroll;
   overflow: scroll;
 }
+

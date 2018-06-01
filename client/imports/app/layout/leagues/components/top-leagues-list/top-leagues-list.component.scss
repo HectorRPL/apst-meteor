@@ -1,6 +1,30 @@
-// Ajusta los textos muy largos para no estropear los estilos
-.adjust {
-  white-space:nowrap;
-  text-overflow:ellipsis;
-  overflow:hidden;
+@import "../../../../../../variables";
+
+.card-body {
+  // padding: .5rem; ¿que será mejor el rem o el pixel?
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: $secondary-c !important;
+}
+
+.card:hover,
+.card-body:hover {
+  background-color: $primary-a !important;
+}
+
+.title {
+  font-size: x-large;
+  margin: 0px;
+  padding: 0 0 5px 0px;
+  border: none;
+  // font-weight: bolder;
+}
+
+.subtitle {
+  font-size: smaller;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+  margin-top: -9px !important;
+  margin-bottom: 11px !important;
 }

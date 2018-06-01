@@ -1,1 +1,405 @@
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import "./variables";
+
+/**************************************************
+                      font-face
+**************************************************/
+
+// font blockletter (cuadrada deportiva)
+
+@font-face {
+  font-family: "blockLetter";
+  font-style: normal;
+  font-weight: normal;
+  // todo falta importar a eot para internet IE 8-11
+  src: local("blockLetter"), url("/font/blockLetter.otf") format("opentype");
+}
+
+// font helvetica neune
+
+@font-face {
+  font-family: "helveticaNeueLight";
+  font-style: normal;
+  font-weight: normal;
+  // todo falta importar a eot para internet IE 8-11
+  src: local("helveticaNeueLight"), url("/font/helveticaNeueLight.otf") format("opentype");
+}
+
+/**************************************************
+                      basics
+**************************************************/
+
+.background-primary-a {
+  background-color: $primary-a;
+}
+
+.background-secondary-a {
+  background-color: $secondary-a;
+}
+
+.background-secondary-b {
+  background-color: $secondary-b;
+}
+
+.secondary {
+  color: $secondary-a;
+}
+
+// Esta clase es algo especial y confusa. Pero aquí lo explico.
+// La letra que predomna es la letra tipo deportes, y cuando se
+// usen textos para leer o escribir se usará esta clase.
+// No quería usar este tipo de clases, y que la app estuviera
+// con el menor de class posibles. La idea era casi casi
+// reescribir bootstrap, pero debido a la línea gráfica tendrá
+// que ser así, de momento.
+
+.font-helvetica-neue {
+  font-family: "helveticaNeue", Helvetica, Arial, sans-serif;
+  a {
+    text-decoration: underline;
+  }
+}
+
+
+/**************************************************
+                      body
+**************************************************/
+
+body {
+  font-family: "blockLetter", Helvetica, Arial, sans-serif;
+  color: $secondary-b !important;
+  background-color: $secondary-a;
+
+}
+
+/**************************************************
+                        h
+**************************************************/
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: $secondary-b;
+}
+
+
+/**************************************************
+                      input
+**************************************************/
+
+input {
+  color: $secondary-b !important;
+  font-family: "helveticaNeue", Helvetica, Arial, sans-serif;
+  font-weight: bolder;
+  border-radius: 0px !important;
+  border-color: transparent !important;
+  background-color: $secondary-c !important;
+}
+
+input:focus {
+  outline: none !important;
+  border: 1px solid $secondary-c !important;
+  box-shadow: none !important;
+}
+
+// placeholder
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  font-family: "blockLetter", Helvetica, Arial, sans-serif;
+  color: $secondary-b !important;
+  font-weight: 100;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  font-family: "blockLetter", Helvetica, Arial, sans-serif;
+  color: $secondary-b !important;
+  font-weight: 100;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  font-family: "blockLetter", Helvetica, Arial, sans-serif;
+  color: $secondary-b !important;
+  font-weight: 100;
+}
+
+// Da estilo a los inputs que están mal llenados
+
+.invalid-feedback {
+  display: none;
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 80%;
+  color: $danger;
+}
+
+.was-validated
+.form-control:invalid,
+.form-control.is-invalid,
+.was-validated
+.custom-select:invalid,
+.custom-select.is-invalid {
+  border-color: $danger !important;
+}
+
+.was-validated
+.form-control:invalid:focus,
+.form-control.is-invalid:focus,
+.was-validated
+.custom-select:invalid:focus,
+.custom-select.is-invalid:focus {
+  border-color: $danger !important;
+  box-shadow: $danger !important;
+}
+
+/**************************************************
+                        a
+**************************************************/
+
+a {
+  cursor: pointer;
+  color: inherit;
+}
+
+a:hover {
+  color: $primary-a !important;
+  border: none !important;
+  text-decoration: none;
+  color: inherit;
+  text-transform: none;
+  margin: 0 !important;
+  background-color: transparent;
+}
+
+a:target {
+  background-color: transparent;
+}
+
+/**************************************************
+                    buttons
+**************************************************/
+
+.btn {
+  border-radius: 0px;
+  border: none;
+}
+
+.btn-primary {
+  background-color: $secondary-c !important;
+  color: $secondary-b !important;
+
+  @include hover-focus {
+    background-color: $primary-a !important;
+  }
+}
+
+button:active {
+  background-color: transparent !important;
+}
+
+/**************************************************
+                      modal
+**************************************************/
+
+// El fondo que aparece atrás del modal
+.modal {
+  background-color: $primary-a;
+
+  ///////////// <centrar>
+  background:url(/img/chevron.png);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  ///////////// </centrar>
+}
+
+.modal-content {
+  // border-color: $secondary-c;
+  border-radius: 0px;
+
+}
+
+.modal-header,
+.modal-body,
+.modal-footer {
+  background-color: $secondary-a;
+  border-color: $secondary-a;
+  border-radius: 0px;
+}
+
+/**************************************************
+                      tabs
+**************************************************/
+
+.nav-link {
+  color: $secondary-b;
+
+  @include hover-focus {
+    color: $primary-a;
+  }
+}
+
+.nav-tabs
+.nav-link {
+  border: none;
+}
+
+// Se colorea el borde color blanco que viene por default (nav-tabs) en bootstrap
+
+ul {
+  border-bottom: 1px solid $secondary-a !important;
+  background-color: $secondary-a !important;
+}
+
+/**************************************************
+                acordeon / card
+**************************************************/
+
+.card {
+  border-color: $secondary-c;
+  border-radius: 0px;
+  background-color: $secondary-c !important;
+}
+
+.card > .card-header {
+
+  background-color: $secondary-c !important;
+  color: $secondary-b !important;
+  border-color: transparent;
+  border-radius: 0px;
+}
+
+.card-body {
+  background-color: $secondary-a !important;
+  color: $secondary-b;
+}
+
+deposit-types-tabs {
+
+  .card-body {
+    background-color: $secondary-a !important;
+    color: $secondary-c !important;
+  }
+}
+
+/**************************************************
+                      active
+**************************************************/
+
+.active {
+  background-color: transparent !important;
+  color: $primary-a !important;
+}
+
+/**************************************************
+                tache de modales
+**************************************************/
+
+.close {
+  color: $secondary-b;
+  text-shadow: none;
+  font-family: "helveticaNeue", Helvetica, Arial, sans-serif;
+
+  @include hover-focus {
+    color: $primary-a;
+    text-decoration: none;
+    box-shadow: none;
+    border: none;
+    // opacity: .75;
+  }
+}
+
+
+/**************************************************
+  pantallas/componentes que usan helveticaNeue
+**************************************************/
+
+app-footer,
+app-not-found,
+app-policies,
+app-notice-of-privacy,
+app-reset-password,
+app-verify-email,
+ngb-alert {
+  font-family: "helveticaNeue", Helvetica, Arial, sans-serif;
+}
+
+
+/**************************************************
+                    dropdown-menu
+**************************************************/
+/*Son los cuadros que aparecen cuando uno le da click a un ícono del nabvar, por ejemplo al monito user*/
+
+.dropdown-menu {
+  border-radius: 0px;
+
+  a:hover {
+    background-color: transparent;
+  }
+}
+
+/**************************************************
+                      table
+**************************************************/
+
+th {
+  border: none !important;
+  border-bottom: solid $secondary-c !important;
+  font-family: "helveticaNeue", Helvetica, Arial, sans-serif;
+}
+
+td {
+  font-family: "helveticaNeue", Helvetica, Arial, sans-serif;
+}
+
+
+/**************************************************
+***************************************************
+********************* VARIOS **********************
+***************************************************
+**************************************************/
+
+
+/**************************************************
+      Oculta elementos cuando se es responsive
+**************************************************/
+
+@media screen and (max-width: 767px) {
+  .hide-in-responsive {
+    display: none !important;
+  }
+}
+
+/**************************************************
+                No desbordar texto
+**************************************************/
+
+// Ajusta los textos muy largos paque no se desborden y no estropear los estilos
+
+.no-overflow {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+
+.pagination-previous {
+  background-color: transparent;
+  color:  $secondary-b !important;
+
+}
+
+.current {
+  background-color: transparent !important;
+  color:  $primary-a !important;
+}
+
+.ngx-pagination {
+  a {
+    background-color: transparent !important;
+    color:  $secondary-b;
+  }
+}

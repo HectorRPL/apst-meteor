@@ -11,25 +11,25 @@
   <div class="row">
     <div class="col-sm-12 mb-3">
       <p>
-        Home: <span class="pull-right">{{betO2O$.home}}</span> <br>
-        Away: <span class="pull-right">{{betO2O$.away}}</span> <br>
-        Match Start Date: <span class="pull-right">{{betO2O$.matchStartDate | date: 'dd/MM/yyyy, h:mm'}}</span> <br>
-        Score Home: <span class="pull-right">{{betO2O$.scoreHome}}</span> <br>
-        Score Away: <span class="pull-right">{{betO2O$.scoreAway}}</span> <br>
-        Amount: <span class="pull-right">{{betO2O$.amount}}</span> <br>
-        Forecast Creator: <span class="pull-right">{{betO2O$.forecastCreator}}</span> <br>
-        Creator UserId: <span class="pull-right">{{betO2O$.creatorUserId}}</span> <br>
-        Creation Date: <span class="pull-right">{{betO2O$.creationDate | date: 'dd/MM/yyyy, h:mm'}}</span> <br>
-        Oponent UserId: <span class="pull-right">{{betO2O$.oponentUserId}}</span> <br>
-        Accept Date: <span class="pull-right">{{betO2O$.acceptDate | date: 'dd/MM/yyyy, h:mm'}}</span> <br>
-        Forecast Oponent: <span class="pull-right">{{betO2O$.forecastOponent}}</span> <br>
+        Home: <span class="float-right">{{betO2O$.home}}</span> <br>
+        Away: <span class="float-right">{{betO2O$.away}}</span> <br>
+        Match Start Date: <span class="float-right">{{betO2O$.matchStartDate | date: 'dd/MM/yyyy, h:mm'}}</span> <br>
+        Score Home: <span class="float-right">{{betO2O$.scoreHome}}</span> <br>
+        Score Away: <span class="float-right">{{betO2O$.scoreAway}}</span> <br>
+        Amount: <span class="float-right">{{betO2O$.amount}}</span> <br>
+        Forecast Creator: <span class="float-right">{{betO2O$.forecastCreator}}</span> <br>
+        Creator UserId: <span class="float-right">{{betO2O$.creatorUserId}}</span> <br>
+        Creation Date: <span class="float-right">{{betO2O$.creationDate | date: 'dd/MM/yyyy, h:mm'}}</span> <br>
+        Oponent UserId: <span class="float-right">{{betO2O$.oponentUserId}}</span> <br>
+        Accept Date: <span class="float-right">{{betO2O$.acceptDate | date: 'dd/MM/yyyy, h:mm'}}</span> <br>
+        Forecast Oponent: <span class="float-right">{{betO2O$.forecastOponent}}</span> <br>
       </p>
     </div>
   </div>
 </div>
 <div class="modal-footer">
   <button type="button"
-          class="btn btn-outline-dark"
+          class="btn btn-primary"
           (click)="activeModal.dismiss('Cross Click')">Close
   </button>
 </div>

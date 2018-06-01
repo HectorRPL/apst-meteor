@@ -1,8 +1,10 @@
+@import "../../../variables";
+
 .navbar-brand {
   position: relative;
   right: 5px;
-  color: black;
   font-weight: bolder;
+  color: $primary-a;
 }
 
 // Es necesario, es como una especie de wraper, o mainc-container pero para el nabvar.

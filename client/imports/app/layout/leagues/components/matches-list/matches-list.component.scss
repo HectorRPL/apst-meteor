@@ -1,11 +1,66 @@
-// Ajusta los textos muy largos para no estropear los estilos
-.adjust {
-  white-space:nowrap;
-  text-overflow:ellipsis;
-  overflow:hidden;
+@import "../../../../../../variables";
+
+.card-body {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: $secondary-c !important;
+}
+
+.card:hover,
+.card-body:hover {
+  background-color: $primary-a !important;
+  color: $secondary-b !important;
+}
+
+.card {
+  color: $secondary-c;
+  border-radius: 0px;
+  border: none;
+  background-color: $secondary-b;
+}
+
+.card-body {
+  padding: 0px;
+
 }
 
 .offline {
   pointer-events: none;
   cursor: default;
+}
+
+.time {
+  position: relative;
+  top: 10px;
+  letter-spacing: 1px;
+}
+
+.day {
+  font-size: x-large;
+}
+
+.month {
+  position: relative;
+  bottom: 10px;
+}
+
+
+.row,
+.col-sm-5,
+.col-sm-2 {
+  margin: 0px;
+  padding: 0px;
+  border: none;
+}
+
+.col-sm-5 {
+  position: relative;
+  bottom: 10px;
+}
+
+.correct {
+  position: relative;
+  top: 11px;
+
+  font-size: larger;
 }

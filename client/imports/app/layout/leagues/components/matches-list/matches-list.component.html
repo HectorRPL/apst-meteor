@@ -1,21 +1,32 @@
 <div class="row">
-  <div class="col-sm-4 p-1" *ngFor="let apiMatch of apiMatches">
-    <div class="card" [ngClass]="{'offline': apiMatch.status === 'full'}">
-      <a class="card-body adjust"
+  <div class="col-sm-12 p-1" *ngFor="let apiMatch of apiMatches">
+    <div class="card no-overflow" [ngClass]="{'offline': apiMatch.status === 'full'}">
+      <a class="card-body"
          routerLink="/app/leagues/{{apiMatch.l_id}}/match/{{apiMatch.id}}"
          routerLinkActive="disabled">
         <div class="row">
-          <div class="col-6">
-            <small>{{apiMatch.start | date: 'dd/MM/yyyy, h:mm'}}</small>
+          <!--FECHA-->
+          <div class="col-2 text-center">
+            <small>
+              <div class="text-center time">{{apiMatch.start | date: 'h:mm'}}</div>
+            </small>
+            <small>
+              <div class="text-center day">{{apiMatch.start | date: 'dd'}}</div>
+            </small>
+            <small>
+              <div class="text-center month">{{apiMatch.start | date: 'MMMM' | uppercase}}</div>
+            </small>
           </div>
-          <div class="col-6 text-right">
-            <small>{{apiMatch.id}}</small>
+          <!--NOMBRES DE EQUIPO-->
+          <div class="col-8 correct">
+            {{apiMatch.h | uppercase}} <br>
+            {{apiMatch.a | uppercase}}
           </div>
-        </div>
-        <div class="row">
-          <div class="col-5">{{apiMatch.h}}</div>
-          <div class="col-2 text-center">{{apiMatch.hg}}&nbsp;vs&nbsp;{{apiMatch.ag}}</div>
-          <div class="col-5 text-right">{{apiMatch.a}}</div>
+          <!--MARCADOR-->
+          <div class="col-2 correct text-center">
+            {{apiMatch.hg}} <br>
+            {{apiMatch.ag}}
+          </div>
         </div>
       </a>
     </div>
