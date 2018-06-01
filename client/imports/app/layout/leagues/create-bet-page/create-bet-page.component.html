@@ -1,8 +1,21 @@
-<div class="col-sm-12 mb-3" *ngIf="!userId">
-  <ngb-alert [dismissible]="true" [type]="'warning'">
-    <strong>Para crear un apuesta necesitas estar logeado</strong>
-  </ngb-alert>
+<div class="row">
+  <!--ALERTA DE USUARIIO NO LOGEADO-->
+  <div class="offset-sm-3 col-sm-6" *ngIf="!userId">
+    <ngb-alert [dismissible]="true" [type]="'warning'">
+      <strong>Para crear un apuesta necesitas estar logeado</strong>
+    </ngb-alert>
+  </div>
+
+  <!--LA FORMA-->
+  <div class="offset-sm-3 col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <app-create-bet-frm [apiMatch]="apiMatch"
+                            *ngIf="apiMatch"
+                            [userId]="userId"
+                            [match]="match">
+        </app-create-bet-frm>
+      </div>
+    </div>
+  </div>
 </div>
-<app-create-bet-frm [apiMatch]="apiMatch" *ngIf="apiMatch"
-                    [userId]="userId" [match]="match">
-</app-create-bet-frm>

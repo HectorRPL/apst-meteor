@@ -70,7 +70,7 @@ export class CreateBetFrmComponent implements OnInit {
   createBetO2O(matchId): void {
     const bet = this.fillBetO2O(matchId);
     this.betServ.createBet020(bet).subscribe((result) => {
-      this.router.navigate([`/bet/${result.betId}`]);
+      this.router.navigate([`/app/bet/${result.betId}`]);
     }, (e: Error) => {
       this.messageServ.add('Error al crear apuesta', 'danger');
     });

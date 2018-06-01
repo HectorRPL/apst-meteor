@@ -199,6 +199,19 @@ button:active {
   background-color: transparent !important;
 }
 
+
+/**************************************************
+                      label
+**************************************************/
+
+// Esta es unas clases mas perras, es la que interactua con el click que se genera cuando presionamos un botón
+//
+.btn-primary.w-100.btn.active {
+  background-color: $primary-a !important;
+  color: $secondary-b !important;
+}
+
+
 /**************************************************
                       modal
 **************************************************/
@@ -385,6 +398,9 @@ td {
   text-overflow: ellipsis;
 }
 
+/**************************************************
+                  pagination
+**************************************************/
 
 .pagination-previous {
   background-color: transparent;
@@ -397,7 +413,7 @@ td {
   color:  $primary-a !important;
 }
 
-.ngx-pagination {
+ul.ngx-pagination {
   a {
     background-color: transparent !important;
     color:  $secondary-b;
