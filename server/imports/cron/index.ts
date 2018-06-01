@@ -11,6 +11,7 @@ SyncedCron.add({
         return parser.text('every 1 mins');
     },
     job: function () {
+        console.log('Empezo el cron ', new Date());
         cronVerify.verifyStatusMatches();
         cronVerify.verifyStatusBets();
         return new Date();
