@@ -5,6 +5,7 @@
          routerLink="/app/leagues/{{apiMatch.l_id}}/match/{{apiMatch.id}}"
          routerLinkActive="disabled">
         <div class="row">
+          <!--<pre style="color: white">{{apiMatch | json}}</pre>-->
           <!--FECHA-->
           <div class="col-2 text-center">
             <small>
@@ -27,6 +28,17 @@
             {{apiMatch.hg}} <br>
             {{apiMatch.ag}}
           </div>
+          <!--
+          <span class="badge badge-primary"
+                *ngIf="!apiMatch.status != 'null' && !apiMatch.status != 'full'">Now
+          </span>
+          -->
+          <span class="badge badge-primary"
+                *ngIf="apiMatch.status === 'full'">End
+          </span>
+          <span class="badge badge-primary"
+                *ngIf="apiMatch.status === null">Next
+          </span>
         </div>
       </a>
     </div>

@@ -60,7 +60,6 @@
   }
 }
 
-
 /**************************************************
                       body
 **************************************************/
@@ -83,7 +82,6 @@ h4,
 h5 {
   color: $secondary-b;
 }
-
 
 /**************************************************
                       input
@@ -199,7 +197,6 @@ button:active {
   background-color: transparent !important;
 }
 
-
 /**************************************************
                       label
 **************************************************/
@@ -211,7 +208,6 @@ button:active {
   color: $secondary-b !important;
 }
 
-
 /**************************************************
                       modal
 **************************************************/
@@ -221,7 +217,7 @@ button:active {
   background-color: $primary-a;
 
   ///////////// <centrar>
-  background:url(/img/chevron.png);
+  background: url(/img/chevron.png);
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -325,7 +321,6 @@ deposit-types-tabs {
   }
 }
 
-
 /**************************************************
   pantallas/componentes que usan helveticaNeue
 **************************************************/
@@ -339,7 +334,6 @@ app-verify-email,
 ngb-alert {
   font-family: "helveticaNeue", Helvetica, Arial, sans-serif;
 }
-
 
 /**************************************************
                     dropdown-menu
@@ -368,13 +362,11 @@ td {
   font-family: "helveticaNeue", Helvetica, Arial, sans-serif;
 }
 
-
 /**************************************************
 ***************************************************
 ********************* VARIOS **********************
 ***************************************************
 **************************************************/
-
 
 /**************************************************
       Oculta elementos cuando se es responsive
@@ -404,18 +396,37 @@ td {
 
 .pagination-previous {
   background-color: transparent;
-  color:  $secondary-b !important;
+  color: $secondary-b !important;
 
 }
 
 .current {
   background-color: transparent !important;
-  color:  $primary-a !important;
+  color: $primary-a !important;
 }
 
 ul.ngx-pagination {
   a {
     background-color: transparent !important;
-    color:  $secondary-b;
+    color: $secondary-b;
+  }
+}
+
+/**************************************************
+                  badge
+**************************************************/
+
+.badge,
+.badge-primary {
+  border-radius: 0px;
+  border-color: transparent;
+  background-color: transparent;
+  font-weight: 100;
+  animation: blinker 1.7s cubic-bezier(.5, 0, 1, 1) infinite alternate;
+
+  @keyframes blinker {
+    to {
+      opacity: 0;
+    }
   }
 }
