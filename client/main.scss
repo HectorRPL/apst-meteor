@@ -357,7 +357,10 @@ ngb-alert {
                       table
 **************************************************/
 
+
+
 th {
+  cursor: default;
   border: none !important;
   border-bottom: solid $secondary-c !important;
   font-family: "helveticaNeue", Helvetica, Arial, sans-serif;
