@@ -346,6 +346,11 @@ ngb-alert {
   a:hover {
     background-color: transparent;
   }
+
+  logout.dropdown-item:active {
+    background-color: transparent;
+    color: $primary-a;
+  }
 }
 
 /**************************************************
