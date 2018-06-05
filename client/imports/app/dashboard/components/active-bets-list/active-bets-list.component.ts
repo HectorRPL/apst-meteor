@@ -39,7 +39,8 @@ export class ActiveBetsListComponent implements OnInit {
             {creatorUserId: userId},
             {oponentUserId: userId}
           ],
-          oponentUserId: {$exists: true}
+          oponentUserId: {$exists: true},
+          result: {$exists: false}
         }, {});
       });
     });

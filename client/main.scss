@@ -359,6 +359,8 @@ th {
 }
 
 td {
+  // border: none !important;
+  border-bottom: solid 1px $secondary-c !important;
   font-family: "helveticaNeue", Helvetica, Arial, sans-serif;
 }
 
