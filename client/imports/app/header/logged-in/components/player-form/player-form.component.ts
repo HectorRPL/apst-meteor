@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {MeteorObservable} from 'meteor-rxjs';
 import {Player} from '../../../../../../../imports/models/player';
 import {MessagesService} from '../../../../services/messages.service';
+import {updatePlayer} from '../../../../../../../server/imports/methods/players';
 
 
 const now = new Date();

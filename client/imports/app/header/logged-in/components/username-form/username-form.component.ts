@@ -3,6 +3,7 @@ import {Accounts} from 'meteor/accounts-base';
 import {Component, Input, OnChanges} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {MessagesService} from '../../../../services/messages.service';
+import {updateUsername} from '../../../../../../../server/imports/methods/users.ts';
 
 @Component({
   selector: 'app-username-form',
