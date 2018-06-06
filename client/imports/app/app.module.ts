@@ -11,6 +11,7 @@ import {MessagesService} from './services/messages.service';
 import {LeaguesService} from './services/leagues/leagues.service'
 import {UsersService} from './services/users/users.service'
 import {PlayersService} from './services/players/players.service'
+import {ChipsService} from './services/chips/chips.service'
 import {AppComponent} from './app.component';
 
 @NgModule({
@@ -31,7 +32,8 @@ import {AppComponent} from './app.component';
     MessagesService,
     LeaguesService,
     UsersService,
-    PlayersService
+    PlayersService,
+    ChipsService
   ],
   bootstrap: [AppComponent]
 })

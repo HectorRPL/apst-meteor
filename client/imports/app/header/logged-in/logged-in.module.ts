@@ -11,6 +11,7 @@ import {PasswordFormComponent} from './components/password-form/password-form.co
 import {PlayerFormComponent} from './components/player-form/player-form.component';
 import {UserMenuLoggedInComponent} from './components/user-menu-logged-in/user-menu-logged-in.component';
 import {UsernameFormComponent} from './components/username-form/username-form.component';
+import {ShowUserChipsComponent} from './components/show-user-chips/show-user-chips.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import {UsernameFormComponent} from './components/username-form/username-form.co
     PasswordFormComponent,
     PlayerFormComponent,
     UserMenuLoggedInComponent,
-    UsernameFormComponent
+    UsernameFormComponent,
+    ShowUserChipsComponent
   ],
   entryComponents: [
     ATMModalComponent,
