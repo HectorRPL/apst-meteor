@@ -416,9 +416,13 @@ td {
 }
 
 ul.ngx-pagination {
+  padding: 0px;
+
   a {
     background-color: transparent !important;
     color: $secondary-b;
+    padding: 5px;
+    margin: 0px;
   }
 }
 
@@ -429,13 +433,4 @@ ul.ngx-pagination {
 .btn-outline-secondary {
   background-color: $primary-a;
   color: $secondary-b !important;
-}
-
-ul.ngx-pagination   {
-  padding: 0px;
-
-  a {
-    padding: 5px;
-    margin: 0px;
-  }
 }
