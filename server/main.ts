@@ -1,7 +1,7 @@
 import './publish';
 import './methods'
 import './hooks'
-// import './imports/cron/index'
+import './imports/cron/index'
 import {Meteor} from 'meteor/meteor';
 
 declare const ServiceConfiguration: any;
