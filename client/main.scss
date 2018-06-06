@@ -430,3 +430,12 @@ ul.ngx-pagination {
   background-color: $primary-a;
   color: $secondary-b !important;
 }
+
+ul.ngx-pagination   {
+  padding: 0px;
+
+  a {
+    padding: 5px;
+    margin: 0px;
+  }
+}
