@@ -5,7 +5,6 @@
          routerLink="/app/leagues/{{apiMatch.l_id}}/match/{{apiMatch.id}}"
          routerLinkActive="disabled">
         <div class="row">
-          <!--<pre style="color: white">{{apiMatch | json}}</pre>-->
           <!--FECHA-->
           <div class="col-2 text-center">
             <small>
@@ -20,25 +19,27 @@
           </div>
           <!--NOMBRES DE EQUIPO-->
           <div class="col-8 correct">
-            {{apiMatch.h | uppercase}} <br>
-            {{apiMatch.a | uppercase}}
+            {{apiMatch.h | uppercase}}<br>{{apiMatch.a | uppercase}}
           </div>
           <!--MARCADOR-->
-          <div class="col-2 correct text-center">
-            {{apiMatch.hg}} <br>
-            {{apiMatch.ag}}
+          <div class="col-2 correct text-center">{{apiMatch.hg}}<br>{{apiMatch.ag}}</div>
+
+        </div>
+        <div class="row text-center no-pading-margin">
+          <div class="col-2 no-pading-margin text-center">
+            <!--PRÓXIMOS EVENTOS-->
+            <span class="badge badge-primary"
+                  *ngIf="apiMatch.status === null">Incoming
+          </span>
+            <!--EVENTOS QUE SE ESTÁN JUGANDO AHORA-->
+            <span class="badge badge-secondary"
+                  *ngIf="apiMatch.status != null && apiMatch.status != 'full'">Now !
+          </span>
+            <!--EVENTOS FINALIZADOS-->
+            <span class="badge badge-warning"
+                  *ngIf="apiMatch.status === 'full'">Finished
+          </span>
           </div>
-          <!--
-          <span class="badge badge-primary"
-                *ngIf="!apiMatch.status != 'null' && !apiMatch.status != 'full'">Now
-          </span>
-          -->
-          <span class="badge badge-primary"
-                *ngIf="apiMatch.status === 'full'">End
-          </span>
-          <span class="badge badge-primary"
-                *ngIf="apiMatch.status === null">Next
-          </span>
         </div>
       </a>
     </div>

@@ -423,25 +423,6 @@ ul.ngx-pagination {
 }
 
 /**************************************************
-                  badge
-**************************************************/
-
-.badge,
-.badge-primary {
-  border-radius: 0px;
-  border-color: transparent;
-  background-color: transparent;
-  font-weight: 100;
-  animation: blinker 1.7s cubic-bezier(.5, 0, 1, 1) infinite alternate;
-
-  @keyframes blinker {
-    to {
-      opacity: 0;
-    }
-  }
-}
-
-/**************************************************
                   BirdDate input
 **************************************************/
 

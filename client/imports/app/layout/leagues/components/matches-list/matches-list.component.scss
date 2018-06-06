@@ -64,3 +64,56 @@
 
   font-size: larger;
 }
+
+.no-pading-margin {
+  padding: 0px !important;
+  margin: 0px !important;
+  height: 0px;
+}
+
+/**************************************************
+                  badge
+**************************************************/
+
+.badge {
+  position: relative;
+  bottom: 20px;
+  padding-top: 2px;
+  margin-top: 2px;
+}
+
+.badge-primary {
+  border-radius: 0px;
+  border-color: transparent;
+  background-color: $primary-a;
+  font-weight: 100;
+  animation: blinker 3s cubic-bezier(.9, .9, .1, 4) infinite alternate;
+
+  @keyframes blinker {
+    to {
+      opacity: 0;
+    }
+  }
+}
+
+.badge-secondary {
+  border-radius: 0px;
+  border-color: transparent;
+  background-color: $primary-a;
+  font-weight: 100;
+  animation: blinker .2s cubic-bezier(.5, 0, 1, 1) infinite alternate;
+
+  @keyframes blinker {
+    to {
+      opacity: 0;
+    }
+  }
+}
+
+.badge-warning {
+  color: $secondary-b;
+  border-radius: 0px;
+  border-color: transparent;
+  background-color: $primary-a;
+  font-weight: 100;
+}
