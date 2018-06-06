@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import {MeteorObservable, ObservableCursor} from 'meteor-rxjs';
 import {MessagesService} from '../../../../services/messages.service';
-import {PlayersColl} from '../../../../../../../imports/collections/players';
+import {PlayersService} from '../../../../services/players/players.service';
 
 @Component({
   selector: 'app-my-account-modal',
@@ -15,24 +15,21 @@ export class MyAccountModalComponent implements OnInit {
   user$;
 
   constructor(public activeModal:NgbActiveModal,
-              private messageServ:MessagesService) {
+              private messageServ:MessagesService,
+              private playerServ:PlayersService) {
   }
 
   ngOnInit() {
-    this.getPlayer();
     this.getUser();
+    this.getPlayer();
   }
 
-  getPlayer() {
-    MeteorObservable
-      .subscribe('playerLogged')
-      .subscribe(() => {
-        MeteorObservable
-          .autorun()
-          .subscribe(() => {
-            this.player$ = PlayersColl.findOne({});
-          });
+  getPlayer():void {
+    MeteorObservable.subscribe('playerLogged').subscribe(() => {
+      MeteorObservable.autorun().subscribe(() => {
+        this.player$ = this.playerServ.getPlayer({});
       });
+    });
   }
 
   getUser() {

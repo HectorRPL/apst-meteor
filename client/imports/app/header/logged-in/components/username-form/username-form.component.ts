@@ -1,9 +1,7 @@
-import {MeteorObservable} from 'meteor-rxjs';
-import {Accounts} from 'meteor/accounts-base';
 import {Component, Input, OnChanges} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {MessagesService} from '../../../../services/messages.service';
-import {updateUsername} from '../../../../../../../server/imports/methods/users.ts';
+import {UsersService} from '../../../../services/users/users.service';
 
 @Component({
   selector: 'app-username-form',
@@ -16,7 +14,8 @@ export class UsernameFormComponent implements  OnChanges {
   usernameFrm:FormGroup;
 
   constructor(private fb:FormBuilder,
-              private messageServ:MessagesService) {
+              private messageServ:MessagesService,
+              private userServ: UsersService) {
 
     this.messageServ.clear();
     this.createForm();
@@ -50,29 +49,18 @@ export class UsernameFormComponent implements  OnChanges {
 
   onSubmit() {
     this.messageServ.clear();
-    const userId = this.userId();
     const newUsername = this.newUsername();
 
-    MeteorObservable.call('updateUsername', newUsername.newUsername).subscribe({
-      next: (doc) => {
-        console.log('numero de docs actualizados:', doc);
+    this.userServ.updateUsername(newUsername.newUsername).subscribe({
+      next: (algo) => {
+        console.log(algo);
         this.messageServ.add('Done!.', 'success');
       },
       error: (e: Error) => {
-        console.log('[err]', e);
-        this.messageServ.add('Username not update.', 'danger');
+        console.log(e);
+        this.messageServ.add('Not update', 'danger');
       }
     });
-  }
-
-
-  userId() {
-
-    const userId = {
-      userId: Meteor.userId()
-    };
-
-    return userId;
   }
 
   newUsername() {

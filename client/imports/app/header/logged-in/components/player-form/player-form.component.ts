@@ -1,10 +1,8 @@
 import {Component, Input, OnChanges} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {MeteorObservable} from 'meteor-rxjs';
 import {Player} from '../../../../../../../imports/models/player';
 import {MessagesService} from '../../../../services/messages.service';
-import {updatePlayer} from '../../../../../../../server/imports/methods/players';
-
+import {PlayersService} from '../../../../services/players/players.service';
 
 const now = new Date();
 
@@ -21,7 +19,8 @@ export class PlayerFormComponent implements OnChanges {
   maxDate:any;
 
   constructor(private fb:FormBuilder,
-              private messageServ:MessagesService) {
+              private messageServ:MessagesService,
+              private playerServ: PlayersService) {
 
     this.minDate = {
       year: now.getFullYear() - 70,
@@ -83,24 +82,25 @@ export class PlayerFormComponent implements OnChanges {
 
   onSubmit() {
     this.messageServ.clear();
-    const newData = this.newData();
+    const newPlayerData = this.newPlayerData();
 
-    MeteorObservable.call('updatePlayer', newData).subscribe({
+    this.playerServ.updatePlayer(newPlayerData).subscribe({
       next: (doc) => {
-        this.messageServ.add('Done!', 'success');
+        console.log(doc);
+        this.messageServ.add('Done!.', 'success');
       },
       error: (e: Error) => {
-        console.log('[err]', e);
-        this.messageServ.add('Player not update.', 'danger');
+        console.log(e);
+        this.messageServ.add('Not update', 'danger');
       }
     });
 
   }
 
-  newData() {
+  newPlayerData() {
 
     const formModel = this.playerFrm.value;
-    const newData = {
+    const newPlayerData = {
       _id: this.player._id,
       ownerId: this.player.ownerId,
       name: formModel.name,
@@ -108,7 +108,7 @@ export class PlayerFormComponent implements OnChanges {
       birdDate: formModel.birdDate,
     };
 
-    return newData;
+    return newPlayerData;
 
   }
 
