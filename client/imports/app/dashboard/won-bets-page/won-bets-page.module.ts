@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {ShareModule} from '../../share/share.module';
+import {CustomShareModule} from '../../custom-share/custom-share.module';
 import {WonBetsPageRoutingModule} from './won-bets-page-routing.module';
 import {WonBetsPageComponent} from './won-bets-page.component';
 import {WonBetsListComponent} from '../components/won-bets-list/won-bets-list.component';
@@ -10,7 +10,7 @@ import {BetsO2OService} from '../../services/bets-O2O/bets-o2-o.service';
 @NgModule({
   imports: [
     CommonModule,
-    ShareModule,
+    CustomShareModule,
     WonBetsPageRoutingModule
   ],
   declarations: [

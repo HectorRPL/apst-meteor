@@ -1,7 +1,7 @@
 import {RouterModule} from '@angular/router';
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {ShareModule} from '../../share/share.module';
+import {CustomShareModule} from '../../custom-share/custom-share.module';
 import {LoginFormComponent} from './components/login-form/login-form.component';
 import {LoginModalComponent} from './components/login-modal/login-modal.component';
 import {LoginRegisterButtonsComponent} from './components/login-register-buttons/login-register-buttons.component';
@@ -14,7 +14,7 @@ import {RegisterModalComponent} from './components/register-modal/register-modal
   imports: [
     RouterModule,
     CommonModule,
-    ShareModule
+    CustomShareModule
   ],
   declarations: [
     LoginFormComponent,

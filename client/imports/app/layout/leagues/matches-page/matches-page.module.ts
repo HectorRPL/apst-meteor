@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {ShareModule} from '../../../share/share.module';
+import {CustomShareModule} from '../../../custom-share/custom-share.module';
 import {MatchesPageComponent} from './matches-page.component';
 import {MatchesListComponent} from '../components/matches-list/matches-list.component';
 import {MatchesPageRoutingModule} from './matches-page-routing.module';
@@ -9,7 +9,7 @@ import {MatchesPageRoutingModule} from './matches-page-routing.module';
   imports: [
     CommonModule,
     MatchesPageRoutingModule,
-    ShareModule
+    CustomShareModule
   ],
   declarations: [
     MatchesPageComponent,

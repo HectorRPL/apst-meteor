@@ -1,7 +1,7 @@
 import {RouterModule} from '@angular/router';
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {ShareModule} from '../../share/share.module';
+import {CustomShareModule} from '../../custom-share/custom-share.module';
 import {ATMModalComponent} from './components/atm-modal/atm-modal.component';
 import {DebitCreditCardFormComponent} from './components/debit-credit-card-form/debit-credit-card-form.component';
 import {DepositTypesTabsComponent} from './components/deposit-types-tabs/deposit-types-tabs.component';
@@ -18,7 +18,7 @@ import {ShowUserChipsComponent} from './components/show-user-chips/show-user-chi
   imports: [
     RouterModule,
     CommonModule,
-    ShareModule
+    CustomShareModule
   ],
   declarations: [
     ATMModalComponent,

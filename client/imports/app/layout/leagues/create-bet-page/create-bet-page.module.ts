@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {ShareModule} from '../../../share/share.module';
+import {CustomShareModule} from '../../../custom-share/custom-share.module';
 import {CreateBetPageRoutingModule} from './create-bet--page-routing.module';
 import {CreateBetPageComponent} from './create-bet-page.component';
 import {CreateBetFrmComponent} from '../components/create-bet-frm/create-bet-frm.component';
@@ -10,7 +10,7 @@ import {MatchesService} from '../../../services/matches/matches.service';
 @NgModule({
   imports: [
     CommonModule,
-    ShareModule,
+    CustomShareModule,
     CreateBetPageRoutingModule
   ],
   declarations: [

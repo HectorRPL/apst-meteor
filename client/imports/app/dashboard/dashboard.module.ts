@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {ShareModule} from '../share/share.module';
+import {CustomShareModule} from '../custom-share/custom-share.module';
 import {DashboardRoutingModule} from './dashboard-routing.module';
 import {DashboardComponent} from './dashboard.component';
 import {DetailActiveBetModalComponent} from './components/detail-active-bet-modal/detail-active-bet-modal.component';
@@ -17,7 +17,7 @@ import {ActiveBetsListComponent} from "./components/active-bets-list/active-bets
     imports: [
         CommonModule,
         DashboardRoutingModule,
-        ShareModule
+        CustomShareModule
     ],
     declarations: [
         DashboardComponent,

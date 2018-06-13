@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-import {ShareModule} from '../share/share.module';
+import {CustomShareModule} from '../custom-share/custom-share.module';
 import {CommonModule} from '@angular/common';
 import {LayoutRoutingModule} from './layout-routing.module';
 import {LayoutComponent} from './layout.component';
@@ -13,7 +13,7 @@ import {NgxPaginationModule} from "ngx-pagination";
     imports: [
         CommonModule,
         LayoutRoutingModule,
-        ShareModule,
+        CustomShareModule,
         NgxPaginationModule
     ],
     declarations: [
