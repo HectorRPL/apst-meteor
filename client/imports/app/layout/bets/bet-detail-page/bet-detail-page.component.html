@@ -4,7 +4,7 @@
       <div class="card-body" *ngIf="betO2O">
         <div class="row text-center">
           <div class="col-12 font-helvetica-neue">
-            Creada por: {{betO2O.creatorUserId}}
+            <small>Creada por: {{betO2O.creatorUserId}}</small>
           </div>
           <div class="col-12">
             <span class="amount">
@@ -22,7 +22,7 @@
               <div class="col-2">
                 Vs
                 <!--TODO Aquí va la fecha, al parecer con childrens o algo, mientras le pongo Vs-->
-                  <!--
+                <!--
                   <small>
                     <div class="text-center time">{{apiMatch.start | date: 'h:mm'}}</div>
                   </small>
@@ -43,7 +43,9 @@
               <!--COMPARTIR APUESTA-->
               <!--Mostrar sólo al crear y cuando la apuesta no esté aceptada-->
               <div class="col-12 font-helvetica-neue" *ngIf="betO2O.creatorUserId === userId && !betO2O.oponentUserId">
-                <app-share-bet></app-share-bet>
+                <app-share-bet
+                [URL]="shareURL">
+                </app-share-bet>
               </div>
               <!--APUESTA ACEPTADA-->
               <!--Mostrar sólo cuando esté aceptada -->

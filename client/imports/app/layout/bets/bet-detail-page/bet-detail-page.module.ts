@@ -6,17 +6,27 @@ import {BetsDetailRoutingModule} from './bet-detail-page-routing.module';
 import {ShareBetComponent} from '../components/share-bet/share-bet.component';
 import {AcceptBetComponent} from '../components/accept-bet/accept-bet.component';
 import {BetsO2OService} from '../../../services/bets-O2O/bets-o2-o.service';
+import {HttpClientModule} from '@angular/common/http';
+import {ShareModule} from '@ngx-share/core';
+import {ShareButtonModule} from '@ngx-share/button';
+import {ShowUrlFormComponent} from '../components/show-url-form/show-url-form.component';
+import {SocialShareComponent} from '../components/social-share/social-share.component';
 
 @NgModule({
   imports: [
     CommonModule,
     CustomShareModule,
-    BetsDetailRoutingModule
+    BetsDetailRoutingModule,
+    HttpClientModule,
+    ShareModule,
+    ShareButtonModule
   ],
   declarations: [
     BetDetailPageComponent,
     ShareBetComponent,
-    AcceptBetComponent
+    AcceptBetComponent,
+    ShowUrlFormComponent,
+    SocialShareComponent
   ],
   providers: [
     BetsO2OService

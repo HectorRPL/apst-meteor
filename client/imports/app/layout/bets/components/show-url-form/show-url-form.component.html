@@ -1,0 +1,22 @@
+<form [formGroup]="showURLFrm"
+      novalidate
+      autocomplete="off">
+  <div class="input-group mb-3">
+    <input type="text"
+           id="urlId"
+           class="form-control"
+           placeholder="Recipient's username"
+           aria-label="Recipient's username"
+           aria-describedby="basic-addon2"
+           formControlName="url"
+           [attr.disabled]="true">
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary"
+              type="button"
+              mat-fab
+              shareButton="copy">
+        <fa-icon [icon]="share.prop.copy.icon" size="lg"></fa-icon>
+      </button>
+    </div>
+  </div>
+</form>

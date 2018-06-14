@@ -13,6 +13,9 @@ import {UsersService} from './services/users/users.service'
 import {PlayersService} from './services/players/players.service'
 import {ChipsService} from './services/chips/chips.service'
 import {AppComponent} from './app.component';
+import {ShareModule} from "@ngx-share/core";
+import {ShareButtonModule} from '@ngx-share/button';
+
 
 @NgModule({
   imports: [
@@ -22,7 +25,10 @@ import {AppComponent} from './app.component';
     CustomShareModule,
     HeaderModule,
     FooterModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    ShareModule.forRoot(),
+    ShareButtonModule.forRoot()
+
   ],
   declarations: [
     AppComponent

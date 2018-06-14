@@ -1,18 +1,31 @@
 <div class="row">
   <div class="col-12">
-    Reta a tu amigo a través de redes sociales <br>
+    <small>Reta a tu amigo a través de redes sociales:</small>
+    <br><br>
 
-    [ F ] [ T ] [ G ] [ etc] <br>
-    <small>{{shareURL}}</small> <br>
+    <app-social-share></app-social-share>
 
-    O comparte la URL:
+    <br>
+    <small>O bien, comparte la URL:</small>
+
+    <br>
+    <br>
 
     <div class="card">
       <div class="card-body">
-        http://www.brand.com/bet/fsd$32423
+        <div class="row">
+          <div class="col-12">
+            <app-show-url-form
+              [URL]="URL">
+            </app-show-url-form>
+          </div>
+        </div>
       </div>
     </div>
 
-    La primera persona que acepte el reto jugará contigo
+    <br>
+
+    <small>La primera persona que acepte el reto jugará contigo</small>
+
   </div>
 </div>
