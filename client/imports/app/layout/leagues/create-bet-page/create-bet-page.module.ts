@@ -6,6 +6,7 @@ import {CreateBetPageComponent} from './create-bet-page.component';
 import {CreateBetFrmComponent} from '../components/create-bet-frm/create-bet-frm.component';
 import {BetsO2OService} from '../../../services/bets-O2O/bets-o2-o.service';
 import {MatchesService} from '../../../services/matches/matches.service';
+import {CommentsFbComponent} from '../components/comments-fb/comments-fb.component';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import {MatchesService} from '../../../services/matches/matches.service';
   ],
   declarations: [
     CreateBetPageComponent,
-    CreateBetFrmComponent
+    CreateBetFrmComponent,
+    CommentsFbComponent
   ],
   providers: [
     BetsO2OService,

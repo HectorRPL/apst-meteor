@@ -41,7 +41,7 @@ export class CreateBetFrmComponent implements OnInit {
         ]
       ],
       amount: [
-        0,
+        '',
         [
           Validators.required,
           Validators.min(100)

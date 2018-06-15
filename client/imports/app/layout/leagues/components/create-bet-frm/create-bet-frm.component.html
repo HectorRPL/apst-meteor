@@ -1,6 +1,6 @@
 <form [formGroup]="createBetFrm" (ngSubmit)="create()" novalidate autocomplete="off">
-  <div class="form-row mb-3 text-center">
-    <div class="col-sm-12 mb-3">
+  <div class="form-row mb-1 text-center">
+    <div class="col-sm-12 mb-1">
       <p>
         Choose your team
       </p>
@@ -28,17 +28,20 @@
       </div>
     </div>
     <!--FECHA-->
-    <div class="col-sm-12 mb-3 text-center">
+    <div class="col-sm-12 mb-1 text-center">
       <div class="text-center">{{apiMatch.start | date: 'dd'}} {{apiMatch.start | date: 'MMMM' | uppercase}} {{apiMatch.start | date: 'h:mm'}}</div>
     </div>
-    <div class="col-sm-12 mb-3">
-      {{createBetFrm.value['forecastCreator']}}
+    <div class="col-sm-12 mb-1">
+      <!--{{createBetFrm.value['forecastCreator']}}-->
     </div>
     <!--CANTIDAD A APOSTAR-->
-    <div class="col-sm-12 mb-3">
-      <label for="amountId">Enter the amount</label>
-      <input id="amountId" type="number" name="amount" formControlName="amount"
-             class="form-control"
+    <div class="offset-sm-3 col-sm-6 mb-1">
+      <input id="amountId"
+             type="number"
+             name="amount"
+             placeholder="Enter the amount"
+             formControlName="amount"
+             class="form-control text-center"
              [ngClass]="{'is-invalid': createBetFrm.get('amount').invalid
              && !createBetFrm.get('amount').pristine}">
       <div class="invalid-feedback" *ngIf="createBetFrm.get('amount').errors?.required">Required</div>
@@ -48,16 +51,16 @@
       <div class="invalid-feedback" *ngIf="createBetFrm.get('amount').errors?.min">The minimun match is $100 coins</div>
     </div>
     <!--BUTTON-->
-    <div class="col-sm-12 mb-3">
-      <label>&nbsp;</label>
+    <div class="offset-sm-3 col-sm-6 mb-1">
+      <br>
       <button type="submit"
-              class="btn btn-primary form-control"
+              class="btn btn-primary"
               [ngClass]="{'disabled': createBetFrm.invalid}"
               [disabled]="createBetFrm.invalid || !userId">
-        Create
+        Create bet
       </button>
     </div>
-    <div class="col-sm-12 mb-3">
+    <div class="col-sm-12 mb-1">
       <app-messages></app-messages>
     </div>
   </div>

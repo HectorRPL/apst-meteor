@@ -1,21 +1,31 @@
 <div class="row">
   <!--ALERTA DE USUARIIO NO LOGEADO-->
-  <div class="offset-sm-3 col-sm-6" *ngIf="!userId">
+  <div class="offset-sm-3 col-sm-6 p-4" *ngIf="!userId">
     <ngb-alert [dismissible]="true" [type]="'warning'">
       <strong>Para crear un apuesta necesitas estar logeado</strong>
     </ngb-alert>
   </div>
 
   <!--LA FORMA-->
-  <div class="offset-sm-3 col-sm-6">
+  <div class="offset-sm-3 col-sm-6 p-4">
     <div class="card">
       <div class="card-body">
-        <app-create-bet-frm [apiMatch]="apiMatch"
-                            *ngIf="apiMatch"
-                            [userId]="userId"
-                            [match]="match">
+        <h3 class="text-center">Crea tu apuesta</h3>
+        <app-create-bet-frm
+          [apiMatch]="apiMatch"
+          *ngIf="apiMatch"
+          [userId]="userId"
+          [match]="match">
         </app-create-bet-frm>
       </div>
     </div>
   </div>
+  <div class="offset-sm-3 col-sm-6 p-4">
+    <h3 class="text-center">Coliseum</h3>
+    <div style="background-color: white;">
+      <app-comments-fb></app-comments-fb>
+    </div>
+
+  </div>
 </div>
+
